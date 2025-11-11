@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen Extendido - UF1/UF2: Digitalización Aplicada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #cbd5e1;
+            --header-color: #ffffff;
+            --accent-color: #00aaff;
+            --border-color: #334155;
+            --success-bg: #059669;
+            --fail-bg: #b91c1c;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: var(--card-color);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        h1, h2, h3 {
+            color: var(--header-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+        }
+        p, li {
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: var(--accent-color);
+            font-weight: 400;
+        }
+        .concept {
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 18px;
+            padding: 15px;
+            background: #29364a;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 5px;
+        }
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+        }
+        .button-container, .exit-button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+        #results {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--header-color);
+        }
+        .results-pass {
+            background-color: var(--success-bg);
+        }
+        .results-fail {
+            background-color: var(--fail-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Resumen Extendido: Digitalización Aplicada (UF1 y UF2)</h1>
+        
+        <div class="concept">
+            <h2>Unidad Formativa 1: La Digitalización</h2>
+            <h3>¿Qué es la Digitalización y la Transformación Digital?</h3>
+            <p>La <strong>digitalización</strong> es el primer paso y se define como la acción de <strong>incorporar tecnologías digitales en los procesos, productos y servicios existentes</strong>. El objetivo es claro: mejorar la eficiencia, aumentar la productividad y fortalecer la competitividad de una organización.</p>
+            <p>La <strong>Transformación Digital</strong> va mucho más allá. No se trata solo de adoptar nueva tecnología, sino de un <strong>cambio fundamental en la cultura y la organización</strong> de una empresa. Implica repensar los modelos de negocio, las operaciones y las relaciones con los clientes. Afecta a tres pilares:</p>
+            <ul>
+                <li><strong>Personas:</strong> Requiere que los empleados adquieran nuevas competencias digitales y se adapten a nuevas formas de trabajar.</li>
+                <li><strong>Empresas:</strong> Deben modificar su estructura, su estrategia y su cultura para ser más ágiles y estar centradas en el cliente.</li>
+                <li><strong>Decisiones:</strong> Se abandonan las suposiciones para empezar a tomar decisiones estratégicas basadas en el análisis de datos reales.</li>
+            </ul>
+
+            <h3>Industria 4.0: La Cuarta Revolución Industrial</h3>
+            <p>Este término se refiere a la fase actual de la revolución industrial, caracterizada por la <strong>interconexión total entre los sistemas físicos y los digitales</strong>. Las fábricas se vuelven "inteligentes" gracias a la integración de tecnologías que permiten la comunicación autónoma entre máquinas, productos y personas. Sus elementos clave son:</p>
+            <ul>
+                <li><strong>Sensores y Automatización:</strong> Dispositivos que capturan datos del mundo físico (temperatura, posición, etc.) y sistemas que actúan de forma autónoma.</li>
+                <li><strong>Inteligencia Artificial (IA):</strong> Sistemas que pueden aprender, razonar y tomar decisiones, optimizando procesos complejos.</li>
+                <li><strong>Big Data:</strong> La capacidad de procesar y analizar enormes volúmenes de datos para encontrar patrones, tendencias y obtener información valiosa.</li>
+                <li><strong>Internet de las Cosas (IoT):</strong> La red de objetos físicos (desde electrodomésticos hasta maquinaria industrial) que están conectados a internet y pueden intercambiar datos.</li>
+                <li><strong>Impresión 3D:</strong> Creación de objetos tridimensionales capa por capa, permitiendo la fabricación de prototipos y productos personalizados de forma rápida y barata.</li>
+                <li><strong>Robótica Avanzada:</strong> Robots colaborativos (cobots) que trabajan de forma segura junto a los humanos, realizando tareas de alta precisión.</li>
+            </ul>
+
+            <h3>Beneficios y Desafíos de la Digitalización</h3>
+            <p>La adopción de estas tecnologías trae consigo ventajas significativas, pero también obstáculos que deben ser gestionados:</p>
+            <ul>
+                <li><strong>Beneficios:</strong> Aumento de la <strong>eficiencia</strong> (hacer más con menos), creación de <strong>nuevos modelos de negocio</strong> (como servicios de suscripción), y una <strong>mejora radical en la experiencia del cliente</strong> (personalización y rapidez).</li>
+                <li><strong>Desafíos:</strong> La <strong>necesidad de formación digital</strong> continua para los empleados, la <strong>brecha tecnológica</strong> (diferencias en el acceso a la tecnología), la alta <strong>dependencia tecnológica</strong> y, sobre todo, los crecientes <strong>riesgos de ciberseguridad</strong> al tener más sistemas conectados.</li>
+            </ul>
+        </div>
+
+        <div class="concept">
+            <h2>Unidad Formativa 2: Tecnologías Habilitadoras Digitales (THD)</h2>
+            <h3>¿Qué son las THD?</h3>
+            <p>Las Tecnologías Habilitadoras Digitales (THD) son el <strong>conjunto de herramientas y tecnologías que actúan como motor de la transformación digital</strong>. Son la base sobre la que se construye la Industria 4.0 y permiten a las empresas innovar y reinventarse. Algunos ejemplos clave son: <strong>IoT, IA, Big Data, Cloud Computing, Blockchain, Ciberseguridad, Robótica, Realidad Virtual/Aumentada, Impresión 3D y 5G.</strong></p>
+
+            <h3>Clasificación y Características</h3>
+            <p>Las THD se pueden agrupar en dos grandes categorías según su función principal:</p>
+            <ol>
+                <li><strong>Tecnologías de la Información (TI):</strong> Se encargan de la gestión de los datos. Su función es <strong>almacenar, procesar, analizar y comunicar la información</strong>. Son el "cerebro" de la organización digital.</li>
+                <li><strong>Tecnologías de la Operación (TO):</strong> Se encargan del mundo físico. Su función es <strong>monitorizar y automatizar los procesos industriales y físicos</strong>, como el control de maquinaria. Son los "brazos y piernas".</li>
+            </ol>
+            <p>A pesar de sus diferencias, todas las THD comparten características comunes:</p>
+            <ul>
+                <li><strong>Interconexión:</strong> La capacidad de conectar dispositivos y sistemas para que se comuniquen entre sí.</li>
+                <li><strong>Automatización:</strong> La ejecución de procesos de forma autónoma, sin intervención humana directa.</li>
+                <li><strong>Escalabilidad:</strong> La flexibilidad para adaptarse al crecimiento y a las nuevas necesidades del negocio.</li>
+                <li><strong>Seguridad:</strong> La necesidad intrínseca de proteger los datos y los sistemas contra ciberataques.</li>
+                <li><strong>Versatilidad:</strong> La capacidad de ser aplicadas a múltiples sectores productivos (sanidad, industria, educación, etc.).</li>
+                <li><strong>Analítica Avanzada:</strong> El potencial de convertir grandes volúmenes de datos en conocimiento para tomar decisiones inteligentes.</li>
+            </ul>
+        </div>
+        
+        <div class="concept">
+            <h2>Impacto Ambiental y Conclusiones</h2>
+            <p>La adopción masiva de las THD tiene un doble filo en su relación con el medio ambiente:</p>
+            <ul>
+                <li><strong>Impacto Positivo:</strong> Fomentan la sostenibilidad al permitir la <strong>reducción del consumo energético</strong>, una drástica <strong>disminución del uso de papel</strong> y la viabilidad del <strong>teletrabajo</strong>, que reduce las emisiones por desplazamientos.</li>
+                <li><strong>Impacto Negativo:</strong> Generan un <strong>aumento de residuos electrónicos</strong> difíciles de reciclar, un elevado <strong>consumo energético en los centros de datos</strong> (data centers) y una rápida <strong>obsolescencia tecnológica</strong> que fomenta el consumismo.</li>
+            </ul>
+            <h3>Conclusiones Clave</h3>
+            <p>La digitalización está cambiando de forma irreversible nuestra manera de trabajar y comunicarnos. Las THD son el pilar de esta transformación que afecta a todas las industrias sin excepción. Por tanto, es absolutamente necesario <strong>formarse continuamente</strong> para poder adaptarse a los cambios tecnológicos y seguir siendo competitivos en el nuevo paradigma digital.</p>
+        </div>
+
+        <hr style="border-color: var(--border-color); margin: 40px 0;">
+
+        <h2>Test de Evaluación (30 Preguntas)</h2>
+        <p>Selecciona la respuesta correcta para cada pregunta. Al finalizar, pulsa el botón "Evaluar".</p>
+        
+        <form id="quizForm">
+            <!-- PREGUNTAS -->
+            <div class="question"><p>1. ¿Qué es la digitalización?</p>
+                <input type="radio" name="q1" value="a"> a) Un cambio puramente cultural en la empresa.<br>
+                <input type="radio" name="q1" value="b"> b) Incorporar tecnologías digitales para mejorar la eficiencia y productividad.<br>
+                <input type="radio" name="q1" value="c"> c) Comprar los últimos modelos de teléfonos móviles.<br>
+            </div>
+            <div class="question"><p>2. La transformación digital, a diferencia de la digitalización, supone principalmente un:</p>
+                <input type="radio" name="q2" value="a"> a) Cambio tecnológico únicamente.<br>
+                <input type="radio" name="q2" value="b"> b) Cambio cultural y organizativo.<br>
+                <input type="radio" name="q2" value="c"> c) Aumento de los costes de producción.<br>
+            </div>
+            <div class="question"><p>3. ¿Qué caracteriza a la Industria 4.0?</p>
+                <input type="radio" name="q3" value="a"> a) El uso de la máquina de vapor.<br>
+                <input type="radio" name="q3" value="b"> b) La producción en masa.<br>
+                <input type="radio" name="q3" value="c"> c) La interconexión entre sistemas físicos y digitales.<br>
+            </div>
+            <div class="question"><p>4. ¿Cuál de los siguientes NO es un elemento clave de la Industria 4.0?</p>
+                <input type="radio" name="q4" value="a"> a) Inteligencia Artificial (IA).<br>
+                <input type="radio" name="q4" value="b"> b) Internet de las Cosas (IoT).<br>
+                <input type="radio" name="q4" value="c"> c) Archivos en papel.<br>
+            </div>
+            <div class="question"><p>5. ¿Qué son las Tecnologías Habilitadoras Digitales (THD)?</p>
+                <input type="radio" name="q5" value="a"> a) Tecnologías obsoletas que ya no se usan.<br>
+                <input type="radio" name="q5" value="b"> b) Tecnologías que impulsan la transformación digital y la innovación.<br>
+                <input type="radio" name="q5" value="c"> c) Herramientas manuales para la industria.<br>
+            </div>
+            <div class="question"><p>6. ¿Cuál de las siguientes es una THD?</p>
+                <input type="radio" name="q6" value="a"> a) El correo postal.<br>
+                <input type="radio" name="q6" value="b"> b) La máquina de escribir.<br>
+                <input type="radio" name="q6" value="c"> c) Blockchain.<br>
+            </div>
+            <div class="question"><p>7. La función principal de las "Tecnologías de la información" es:</p>
+                <input type="radio" name="q7" value="a"> a) Monitorizar y automatizar procesos industriales.<br>
+                <input type="radio" name="q7" value="b"> b) Almacenar, procesar y comunicar datos.<br>
+                <input type="radio" name="q7" value="c"> c) Fabricar robots.<br>
+            </div>
+            <div class="question"><p>8. ¿A qué categoría de THD pertenece un sistema para automatizar una cadena de montaje?</p>
+                <input type="radio" name="q8" value="a"> a) Tecnologías de la información.<br>
+                <input type="radio" name="q8" value="b"> b) Tecnologías de la operación.<br>
+                <input type="radio" name="q8" value="c"> c) Tecnologías de comunicación.<br>
+            </div>
+            <div class="question"><p>9. ¿Qué característica de las THD se refiere a la capacidad de adaptarse a las necesidades?</p>
+                <input type="radio" name="q9" value="a"> a) Seguridad.<br>
+                <input type="radio" name="q9" value="b"> b) Escalabilidad.<br>
+                <input type="radio" name="q9" value="c"> c) Versatilidad.<br>
+            </div>
+            <div class="question"><p>10. Un ejemplo de beneficio de la digitalización es:</p>
+                <input type="radio" name="q10" value="a"> a) La dependencia tecnológica.<br>
+                <input type="radio" name="q10" value="b"> b) La brecha tecnológica.<br>
+                <input type="radio" name="q10" value="c"> c) La eficiencia y reducción de costes.<br>
+            </div>
+            <div class="question"><p>11. ¿Cuál es uno de los principales desafíos de la digitalización?</p>
+                <input type="radio" name="q11" value="a"> a) La mejora de la experiencia del cliente.<br>
+                <input type="radio" name="q11" value="b"> b) Los riesgos de ciberseguridad.<br>
+                <input type="radio" name="q11" value="c"> c) La creación de nuevos modelos de negocio.<br>
+            </div>
+            <div class="question"><p>12. El uso de robots inteligentes en una fábrica es un ejemplo de digitalización en el sector:</p>
+                <input type="radio" name="q12" value="a"> a) Sanidad.<br>
+                <input type="radio" name="q12" value="b"> b) Industria.<br>
+                <input type="radio" name="q12" value="c"> c) Educación.<br>
+            </div>
+            <div class="question"><p>13. La telemedicina y las historias clínicas electrónicas son aplicaciones de la digitalización en el sector:</p>
+                <input type="radio" name="q13" value="a"> a) Sanidad.<br>
+                <input type="radio" name="q13" value="b"> b) Comercio.<br>
+                <input type="radio" name="q13" value="c"> c) Industria.<br>
+            </div>
+            <div class="question"><p>14. ¿Cuál es un impacto positivo de las THD en el medio ambiente?</p>
+                <input type="radio" name="q14" value="a"> a) Aumento de residuos electrónicos.<br>
+                <input type="radio" name="q14" value="b"> b) Disminución del uso de papel.<br>
+                <input type="radio" name="q14" value="c"> c) Obsolescencia tecnológica.<br>
+            </div>
+            <div class="question"><p>15. ¿Cuál es un impacto negativo de las THD en el medio ambiente?</p>
+                <input type="radio" name="q15" value="a"> a) Reducción del consumo energético.<br>
+                <input type="radio" name="q15" value="b"> b) Teletrabajo y movilidad sostenible.<br>
+                <input type="radio" name="q15" value="c"> c) Consumo energético de los centros de datos.<br>
+            </div>
+            <div class="question"><p>16. En el ejemplo de Salud Digital, ¿qué THD se usa para el diagnóstico por imagen?</p>
+                <input type="radio" name="q16" value="a"> a) IoT.<br>
+                <input type="radio" name="q16" value="b"> b) IA (Inteligencia Artificial).<br>
+                <input type="radio" name="q16" value="c"> c) Blockchain.<br>
+            </div>
+            <div class="question"><p>17. La característica de las THD que se refiere a que son aplicables en múltiples sectores se llama:</p>
+                <input type="radio" name="q17" value="a"> a) Automatización.<br>
+                <input type="radio" name="q17" value="b"> b) Escalabilidad.<br>
+                <input type="radio" name="q17" value="c"> c) Versatilidad.<br>
+            </div>
+            <div class="question"><p>18. ¿Qué THD permite un acceso compartido a datos clínicos en la nube?</p>
+                <input type="radio" name="q18" value="a"> a) Impresión 3D.<br>
+                <input type="radio" name="q18" value="b"> b) Cloud Computing.<br>
+                <input type="radio" name="q18" value="c"> c) Robótica.<br>
+            </div>
+            <div class="question"><p>19. El pago sin contacto en una tienda es un ejemplo de digitalización en el sector:</p>
+                <input type="radio" name="q19" value="a"> a) Educación.<br>
+                <input type="radio" name="q19" value="b"> b) Comercio.<br>
+                <input type="radio" name="q19" value="c"> c) Sanidad.<br>
+            </div>
+            <div class="question"><p>20. "Tomar decisiones basadas en datos reales" es una característica de:</p>
+                <input type="radio" name="q20" value="a"> a) La gestión tradicional.<br>
+                <input type="radio" name="q20" value="b"> b) La transformación digital.<br>
+                <input type="radio" name="q20" value="c"> c) El trabajo manual.<br>
+            </div>
+            <div class="question"><p>21. La "Analítica avanzada" como característica de las THD permite:</p>
+                <input type="radio" name="q21" value="a"> a) Conectar dispositivos entre sí.<br>
+                <input type="radio" name="q21" value="b"> b) Usar datos para tomar decisiones inteligentes.<br>
+                <input type="radio" name="q21" value="c"> c) Proteger los sistemas de ciberataques.<br>
+            </div>
+            <div class="question"><p>22. La necesidad de "formarse continuamente" es una conclusión clave para:</p>
+                <input type="radio" name="q22" value="a"> a) Evitar la tecnología.<br>
+                <input type="radio" name="q22" value="b"> b) Volver a los procesos manuales.<br>
+                <input type="radio" name="q22" value="c"> c) Adaptarse a los cambios tecnológicos.<br>
+            </div>
+            <div class="question"><p>23. ¿Qué THD se utiliza para la monitorización remota de pacientes?</p>
+                <input type="radio" name="q23" value="a"> a) Big Data.<br>
+                <input type="radio" name="q23" value="b"> b) RV/RA.<br>
+                <input type="radio" name="q23" value="c"> c) IoT.<br>
+            </div>
+            <div class="question"><p>24. La "brecha tecnológica" es un...</p>
+                <input type="radio" name="q24" value="a"> a) Beneficio de la digitalización.<br>
+                <input type="radio" name="q24" value="b"> b) Desafío de la digitalización.<br>
+                <input type="radio" name="q24" value="c"> c) Tipo de THD.<br>
+            </div>
+            <div class="question"><p>25. ¿Cuál es la base de la transformación digital?</p>
+                <input type="radio" name="q25" value="a"> a) Los procesos manuales.<br>
+                <input type="radio" name="q25" value="b"> b) Las THD.<br>
+                <input type="radio" name="q25" value="c"> c) La organización jerárquica.<br>
+            </div>
+            <div class="question"><p>26. El uso de "Big Data" en la industria permite realizar:</p>
+                <input type="radio" name="q26" value="a"> a) Impresiones de objetos físicos.<br>
+                <input type="radio" name="q26" value="b"> b) Análisis predictivo.<br>
+                <input type="radio" name="q26" value="c"> c) Aulas virtuales.<br>
+            </div>
+            <div class="question"><p>27. La protección frente a ciberataques es la definición de qué característica de las THD:</p>
+                <input type="radio" name="q27" value="a"> a) Interconexión.<br>
+                <input type="radio" name="q27" value="b"> b) Seguridad.<br>
+                <input type="radio" name="q27" value="c"> c) Automatización.<br>
+            </div>
+            <div class="question"><p>28. "Aumento de residuos electrónicos" es un ejemplo de:</p>
+                <input type="radio" name="q28" value="a"> a) Impacto positivo de las THD en el medio ambiente.<br>
+                <input type="radio" name="q28" value="b"> b) Impacto negativo de las THD en el medio ambiente.<br>
+                <input type="radio" name="q28" value="c"> c) Una característica de la Industria 4.0.<br>
+            </div>
+            <div class="question"><p>29. La tecnología 5G es un ejemplo de:</p>
+                <input type="radio" name="q29" value="a"> a) Un desafío de la digitalización.<br>
+                <input type="radio" name="q29" value="b"> b) Una Tecnología Habilitadora Digital.<br>
+                <input type="radio" name="q29" value="c"> c) Un impacto negativo en el medio ambiente.<br>
+            </div>
+            <div class="question"><p>30. La digitalización afecta a:</p>
+                <input type="radio" name="q30" value="a"> a) Solo al sector industrial.<br>
+                <input type="radio" name="q30" value="b"> b) Solo a las grandes empresas.<br>
+                <input type="radio" name="q30" value="c"> c) A todas las industrias y sectores.<br>
+            </div>
+            
+            <div class="button-container">
+                <button type="button" class="button" onclick="evaluateTest()">Evaluar</button>
+            </div>
+        </form>
+
+        <div id="results"></div>
+
+        <div class="exit-button-container">
+            <a href="../index.html" class="button">Volver al Menú Principal</a>
+        </div>
+    </div>
+
+    <script>
+        function evaluateTest() {
+            const correctAnswers = {
+                q1: "b", q2: "b", q3: "c", q4: "c", q5: "b", q6: "c", q7: "b", q8: "b", q9: "b", q10: "c",
+                q11: "b", q12: "b", q13: "a", q14: "b", q15: "c", q16: "b", q17: "c", q18: "b", q19: "b", q20: "b",
+                q21: "b", q22: "c", q23: "c", q24: "b", q25: "b", q26: "b", q27: "b", q28: "b", q29: "b", q30: "c"
+            };
+            
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const totalQuestions = 30;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const userAnswer = form.elements[questionName] ? form.elements[questionName].value : null;
+                
+                if (userAnswer && userAnswer === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+            
+            const grade = (score / totalQuestions) * 10;
+            const resultsDiv = document.getElementById('results');
+            
+            let message = `Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong> preguntas.<br>Tu nota es: <strong>${grade.toFixed(2)} / 10</strong>.`;
+            
+            resultsDiv.innerHTML = message;
+
+            if (grade >= 5) {
+                resultsDiv.className = 'results-pass';
+                resultsDiv.innerHTML += "<br>¡Enhorabuena, has aprobado!";
+            } else {
+                resultsDiv.className = 'results-fail';
+                resultsDiv.innerHTML += "<br>Necesitas repasar un poco más. ¡Ánimo!";
+            }
+        }
+    </script>
+
+</body>
+</html>

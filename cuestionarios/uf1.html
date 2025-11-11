@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario UF1 - La Digitalización</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #cbd5e1;
+            --header-color: #ffffff;
+            --accent-color: #00aaff;
+            --border-color: #334155;
+            --success-bg: #059669;
+            --fail-bg: #b91c1c;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: var(--card-color);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--header-color);
+            text-align: center;
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #29364a;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 5px;
+        }
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .option {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .button-container, .exit-button-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+        #results {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--header-color);
+        }
+        .results-pass {
+            background-color: var(--success-bg);
+        }
+        .results-fail {
+            background-color: var(--fail-bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario UF1: La Digitalización</h1>
+        
+        <form id="quizForm">
+            <div class="question"><p>1. La digitalización:</p>
+                <label class="option"><input type="radio" name="q1" value="a"> a) Aumenta la complejidad en la gestión de los datos.</label>
+                <label class="option"><input type="radio" name="q1" value="b"> b) Aumenta los costes.</label>
+                <label class="option"><input type="radio" name="q1" value="c"> c) Dificulta las relaciones entre trabajadores.</label>
+                <label class="option"><input type="radio" name="q1" value="d"> d) Mejora la productividad en la empresa.</label>
+            </div>
+            <div class="question"><p>2. El almacenamiento de datos en la nube es una ventaja para las empresas porque:</p>
+                <label class="option"><input type="radio" name="q2" value="a"> a) Permite el acceso a los datos desde cualquier lugar.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> b) La información almacenada es completamente segura y nunca puede ser vulnerada.</label>
+                <label class="option"><input type="radio" name="q2" value="c"> c) La única diferencia entre las diferentes empresas que ofrecen estos servicios es la velocidad de acceso a los datos.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> d) El almacenamiento es ilimitado para cualquier tipo de datos.</label>
+            </div>
+            <div class="question"><p>3. ¿Cuál de las siguientes afirmaciones es una semejanza entre las IT y OT?</p>
+                <label class="option"><input type="radio" name="q3" value="a"> a) Ambos manejan datos de la empresa y operaciones.</label>
+                <label class="option"><input type="radio" name="q3" value="b"> b) Ambos se enfocan en la máquina.</label>
+                <label class="option"><input type="radio" name="q3" value="c"> c) Ambos buscan la eficiencia, aunque en áreas diferentes.</label>
+                <label class="option"><input type="radio" name="q3" value="d"> d) Ambos se aplican a los equipos de telecomunicación y se enfocan en el dato.</label>
+            </div>
+            <div class="question"><p>4. Es un ejemplo de tecnología de la información:</p>
+                <label class="option"><input type="radio" name="q4" value="a"> a) Un lavavajillas industrial.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> b) Un exprimidor.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> c) Una aplicación de reservas online.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> d) Un termostato.</label>
+            </div>
+            <div class="question"><p>5. La seguridad en la IT se centra en:</p>
+                <label class="option"><input type="radio" name="q5" value="a"> a) Proteger sistemas industriales contra ataques informáticos.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> b) Proteger sistemas operativos.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> c) Proteger el sistema de producción de la empresa.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> d) Proteger datos y sistemas contra las amenazas cibernéticas.</label>
+            </div>
+            <div class="question"><p>6. La tendencia actual en las tecnologías IT y OT es:</p>
+                <label class="option"><input type="radio" name="q6" value="a"> a) La convergencia gradual de IT y OT.</label>
+                <label class="option"><input type="radio" name="q6" value="b"> b) La IT y OT diferenciadas.</label>
+                <label class="option"><input type="radio" name="q6" value="c"> c) La ciberseguridad.</label>
+                <label class="option"><input type="radio" name="q6" value="d"> d) La integración completa de IT y OT.</label>
+            </div>
+            <div class="question"><p>7. La tecnología:</p>
+                <label class="option"><input type="radio" name="q7" value="a"> a) Reduce la colaboración entre empleados.</label>
+                <label class="option"><input type="radio" name="q7" value="b"> b) Provoca la desaparición de trabajos cualificados.</label>
+                <label class="option"><input type="radio" name="q7" value="c"> c) Aumenta las tareas rutinarias.</label>
+                <label class="option"><input type="radio" name="q7" value="d"> d) Permite la creación de nuevas profesiones relacionadas con su gestión.</label>
+            </div>
+            <div class="question"><p>8. Las herramientas digitales que se enfocan en el control y la automatización de los procesos físicos en entornos industriales y comerciales son conocidas como:</p>
+                <label class="option"><input type="radio" name="q8" value="a"> a) Internet de las cosas (IoT).</label>
+                <label class="option"><input type="radio" name="q8" value="b"> b) Tecnologías de la información (IT).</label>
+                <label class="option"><input type="radio" name="q8" value="c"> c) Tecnologías de la operación (OT).</label>
+                <label class="option"><input type="radio" name="q8" value="d"> d) Realidad virtual (RV).</label>
+            </div>
+            <div class="question"><p>9. Las IT:</p>
+                <label class="option"><input type="radio" name="q9" value="a"> a) Emplean software, redes y aplicaciones informáticas.</label>
+                <label class="option"><input type="radio" name="q9" value="b"> b) Solo se emplean en entornos industriales.</label>
+                <label class="option"><input type="radio" name="q9" value="c"> c) Tienen ciclos de vida más cortos que las OT.</label>
+                <label class="option"><input type="radio" name="q9" value="d"> d) Se enfocan en estabilizar la producción.</label>
+            </div>
+            <div class="question"><p>10. La inteligencia artificial:</p>
+                <label class="option"><input type="radio" name="q10" value="a"> a) No requiere supervisión humana.</label>
+                <label class="option"><input type="radio" name="q10" value="b"> b) Aumenta los costes de producción.</label>
+                <label class="option"><input type="radio" name="q10" value="c"> c) Sustituye tareas repetitivas y rutinarias.</label>
+                <label class="option"><input type="radio" name="q10" value="d"> d) Está libre de ataques informáticos.</label>
+            </div>
+            <div class="question"><p>11. ¿Cuál de los siguientes aspectos organizativos se ven afectados por la personalización de los productos y servicios?</p>
+                <label class="option"><input type="radio" name="q11" value="a"> a) La seguridad integral.</label>
+                <label class="option"><input type="radio" name="q11" value="b"> b) La toma de decisiones informadas.</label>
+                <label class="option"><input type="radio" name="q11" value="c"> c) La experiencia del cliente.</label>
+                <label class="option"><input type="radio" name="q11" value="d"> d) El mantenimiento predictivo.</label>
+            </div>
+            <div class="question"><p>12. ¿Cuál de las siguientes herramientas que utilizan las empresas es de tecnología de la información?</p>
+                <label class="option"><input type="radio" name="q12" value="a"> a) Supervisory Control and Data Acquisition (SCADA).</label>
+                <label class="option"><input type="radio" name="q12" value="b"> b) Programmable Logic Controllers (PLC).</label>
+                <label class="option"><input type="radio" name="q12" value="c"> c) Historian Software.</label>
+                <label class="option"><input type="radio" name="q12" value="d"> d) Microsoft Azure.</label>
+            </div>
+            <div class="question"><p>13. El departamento que identifica oportunidades para aprovechar nuevas tecnologías y tendencias digitales se denomina:</p>
+                <label class="option"><input type="radio" name="q13" value="a"> a) Seguridad de la Información.</label>
+                <label class="option"><input type="radio" name="q13" value="b"> b) Desarrollo de Software.</label>
+                <label class="option"><input type="radio" name="q13" value="c"> c) Desarrollo Web y Multimedia.</label>
+                <label class="option"><input type="radio" name="q13" value="d"> d) Innovación y Estrategia Digital.</label>
+            </div>
+            <div class="question"><p>14. ¿Cuál de las siguientes afirmaciones es una ventaja de la digitalización empresarial?</p>
+                <label class="option"><input type="radio" name="q14" value="a"> a) Las empresas obtienen más beneficios.</label>
+                <label class="option"><input type="radio" name="q14" value="b"> b) Genera nuevas oportunidades de negocio.</label>
+                <label class="option"><input type="radio" name="q14" value="c"> c) Reduce el estrés de los trabajadores.</label>
+                <label class="option"><input type="radio" name="q14" value="d"> d) Potencia la imagen de la empresa.</label>
+            </div>
+            <div class="question"><p>15. El departamento de soporte técnico:</p>
+                <label class="option"><input type="radio" name="q15" value="a"> a) Ayuda a los empleados con problemas tecnológicos y brinda asistencia para resolver problemas de hardware y software.</label>
+                <label class="option"><input type="radio" name="q15" value="b"> b) Identifica oportunidades para aprovechar nuevas tecnologías y tendencias digitales para mejorar la eficiencia de la empresa.</label>
+                <label class="option"><input type="radio" name="q15" value="c"> c) Se encarga de recopilar, almacenar y gestionar la información de la empresa.</label>
+                <label class="option"><input type="radio" name="q15" value="d"> d) Se ocupa de la infraestructura y los sistemas informáticos de la empresa.</label>
+            </div>
+            
+            <div class="button-container">
+                <button type="button" class="button" onclick="evaluateTest()">Evaluar Cuestionario</button>
+            </div>
+        </form>
+
+        <div id="results"></div>
+
+        <div class="exit-button-container">
+            <a href="../index.html" class="button">Volver al Menú Principal</a>
+        </div>
+    </div>
+
+    <script>
+        function evaluateTest() {
+            const correctAnswers = {
+                q1: "d", q2: "a", q3: "c", q4: "c", q5: "d",
+                q6: "d", q7: "d", q8: "c", q9: "a", q10: "c",
+                q11: "c", q12: "d", q13: "d", q14: "b", q15: "a"
+            };
+            
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const totalQuestions = 15;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const userAnswer = form.elements[questionName] ? form.elements[questionName].value : null;
+                
+                if (userAnswer && userAnswer === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+            
+            const grade = (score / totalQuestions) * 10;
+            const resultsDiv = document.getElementById('results');
+            
+            let message = `Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong> preguntas.<br>Tu nota es: <strong>${grade.toFixed(2)} / 10</strong>.`;
+            
+            resultsDiv.innerHTML = message;
+
+            if (grade >= 5) {
+                resultsDiv.className = 'results-pass';
+                resultsDiv.innerHTML += "<br>¡Enhorabuena, has aprobado!";
+            } else {
+                resultsDiv.className = 'results-fail';
+                resultsDiv.innerHTML += "<br>Necesitas repasar un poco más. ¡Ánimo!";
+            }
+        }
+    </script>
+
+</body>
+</html>

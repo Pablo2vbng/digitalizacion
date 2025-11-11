@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Digitalización - Menú Principal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #cbd5e1;
+            --header-color: #ffffff;
+            --accent-color: #00aaff;
+            --border-color: #334155;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--card-color);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            color: var(--header-color);
+            font-weight: 700;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.1em;
+            color: var(--accent-color);
+            font-weight: 300;
+        }
+        .menu-section {
+            margin-bottom: 40px;
+        }
+        .menu-section h2 {
+            color: var(--header-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .grid-item a {
+            display: block;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 1.1em;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .grid-item a:hover {
+            transform: translateY(-5px);
+            background-color: #29364a;
+            color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 170, 255, 0.2);
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Digitalización</h1>
+            <p>Contenidos y Cuestionarios del Módulo</p>
+        </header>
+
+        <main>
+            <section class="menu-section">
+                <h2>Temario</h2>
+                <div class="grid-container">
+                    <div class="grid-item"><a href="temas/uf1uf2.html">Unidades 1 y 2</a></div>
+                    <div class="grid-item"><a href="temas/uf3uf4.html">Unidades 3 y 4</a></div>
+                    <div class="grid-item"><a href="temas/uf5uf6.html">Unidades 5 y 6</a></div>
+                    <div class="grid-item"><a href="temas/uf7uf8.html">Unidades 7 y 8</a></div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2>Cuestionarios</h2>
+                <div class="grid-container">
+                    <div class="grid-item"><a href="cuestionarios/uf1.html">Cuestionario UF1</a></div>
+                    <div class="grid-item"><a href="cuestionarios/uf2.html">Cuestionario UF2</a></div>
+                    <div class="grid-item"><a href="cuestionarios/uf3.html">Cuestionario UF3</a></div>
+                    <div class="grid-item"><a href="cuestionarios/uf4.html">Cuestionario UF4</a></div>
+                    <div class="grid-item"><a href="cuestionarios/uf5.html">Cuestionario UF5</a></div>
+                    <div class="grid-item"><a href="cuestionarios/uf6.html">Cuestionario UF6</a></div>
+                    <div class="grid-item"><a href="cuestionarios/uf8.html">Cuestionario UF8</a></div>
+                    <div class="grid-item"><a href="cuestionarios/uft.html">Cuestionario Final</a></div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 - Plataforma de Contenidos Digitales</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario UF2 - Tecnologías Habilitadoras Digitales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #cbd5e1;
+            --header-color: #ffffff;
+            --accent-color: #00aaff;
+            --border-color: #334155;
+            --success-bg: #059669;
+            --fail-bg: #b91c1c;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: var(--card-color);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--header-color);
+            text-align: center;
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #29364a;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 5px;
+        }
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .option {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .button-container, .exit-button-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+        #results {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--header-color);
+        }
+        .results-pass {
+            background-color: var(--success-bg);
+        }
+        .results-fail {
+            background-color: var(--fail-bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario UF2: Tecnologías Habilitadoras Digitales</h1>
+        
+        <form id="quizForm">
+            <div class="question"><p>1. La tecnología empleada para la autenticación y seguridad a través de huellas dactilares y reconocimiento facial es:</p>
+                <label class="option"><input type="radio" name="q1" value="a"> a) La biometría.</label>
+                <label class="option"><input type="radio" name="q1" value="b"> b) El Internet de las Cosas (IoT).</label>
+                <label class="option"><input type="radio" name="q1" value="c"> c) La ciberseguridad.</label>
+                <label class="option"><input type="radio" name="q1" value="d"> d) El blockchain.</label>
+            </div>
+            <div class="question"><p>2. La tecnología que permite recopilar datos en tiempo real y automatizar procesos a través de la conexión de dispositivos y objetos físicos a Internet es:</p>
+                <label class="option"><input type="radio" name="q2" value="a"> a) El big data.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> b) El Internet de las Cosas (IoT).</label>
+                <label class="option"><input type="radio" name="q2" value="c"> c) El blockchain.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> d) La Inteligencia Artificial (IA).</label>
+            </div>
+            <div class="question"><p>3. La THD que proporciona un registro descentralizado y seguro de transacciones, lo que es útil para la gestión de la cadena de suministro, se denomina:</p>
+                <label class="option"><input type="radio" name="q3" value="a"> a) La Inteligencia Artificial (IA).</label>
+                <label class="option"><input type="radio" name="q3" value="b"> b) El blockchain.</label>
+                <label class="option"><input type="radio" name="q3" value="c"> c) El Internet de las Cosas (IoT).</label>
+                <label class="option"><input type="radio" name="q3" value="d"> d) El big data.</label>
+            </div>
+            <div class="question"><p>4. Una de las características de las THD es la escalabilidad, ¿a qué hace referencia este término?</p>
+                <label class="option"><input type="radio" name="q4" value="a"> a) Pueden aplicarse en una amplia variedad de industrias y contextos.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> b) Las THD se comunican entre sí.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> c) Permiten la personalización de experiencias para usuarios o clientes.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> d) Pueden crecer y adaptarse a medida que las necesidades de una organización evolucionan.</label>
+            </div>
+            <div class="question"><p>5. En el nombre Tecnologías Habilitadoras Digitales, ¿qué significado tiene Habilitadoras?</p>
+                <label class="option"><input type="radio" name="q5" value="a"> a) Interconexión de las tecnologías.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> b) Conjunto de instrumentos, recursos, técnicas o procedimientos.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> c) Convertir o codificar en números dígitos determinados datos de carácter continuo, como una imagen o un sonido.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> d) Permite, facilita, sirve para una finalidad.</label>
+            </div>
+            <div class="question"><p>6. ¿Cuál de las siguientes características no es propia de las THD?</p>
+                <label class="option"><input type="radio" name="q6" value="a"> a) Versatilidad.</label>
+                <label class="option"><input type="radio" name="q6" value="b"> b) Rigidez.</label>
+                <label class="option"><input type="radio" name="q6" value="c"> c) Escalabilidad.</label>
+                <label class="option"><input type="radio" name="q6" value="d"> d) Innovación.</label>
+            </div>
+            <div class="question"><p>7. La clave para llevar a cabo una transformación digital exitosa es:</p>
+                <label class="option"><input type="radio" name="q7" value="a"> a) Ignorar la necesidad de invertir en seguridad digital.</label>
+                <label class="option"><input type="radio" name="q7" value="b"> b) Adoptar cada vez más tecnologías.</label>
+                <label class="option"><input type="radio" name="q7" value="c"> c) Conectar e integrar todas las innovaciones que se vayan incorporando.</label>
+                <label class="option"><input type="radio" name="q7" value="d"> d) Mantener todas las tecnologías aplicadas, aunque estén obsoletas.</label>
+            </div>
+            <div class="question"><p>8. En el ámbito de la seguridad, las THD:</p>
+                <label class="option"><input type="radio" name="q8" value="a"> a) Protegen contra amenazas cibernéticas.</label>
+                <label class="option"><input type="radio" name="q8" value="b"> b) Tienden a exponer gran cantidad de datos.</label>
+                <label class="option"><input type="radio" name="q8" value="c"> c) Dificultan la reducción de costos a largo plazo.</label>
+                <label class="option"><input type="radio" name="q8" value="d"> d) Limitan los procesos.</label>
+            </div>
+            <div class="question"><p>9. ¿Qué Tecnologías Habilitadoras Digitales pueden facilitar la transformación digital de un hogar?</p>
+                <label class="option"><input type="radio" name="q9" value="a"> a) Domótica.</label>
+                <label class="option"><input type="radio" name="q9" value="b"> b) Realidad Virtual.</label>
+                <label class="option"><input type="radio" name="q9" value="c"> c) La Inteligencia Artificial.</label>
+                <label class="option"><input type="radio" name="q9" value="d"> d) Internet de las Cosas (IoT).</label>
+            </div>
+            <div class="question"><p>10. ¿Qué THD beneficia directamente la satisfacción del cliente?</p>
+                <label class="option"><input type="radio" name="q10" value="a"> a) La eficiencia energética.</label>
+                <label class="option"><input type="radio" name="q10" value="b"> b) Una experiencia de compra personalizada basada en datos.</label>
+                <label class="option"><input type="radio" name="q10" value="c"> c) La automatización del proceso de fabricación.</label>
+                <label class="option"><input type="radio" name="q10" value="d"> d) El almacenamiento de datos en la nube.</label>
+            </div>
+            <div class="question"><p>11. La tecnología THD que permite a las empresas diseñar y crear prototipos de manera rápida y económica es:</p>
+                <label class="option"><input type="radio" name="q11" value="a"> a) El big data.</label>
+                <label class="option"><input type="radio" name="q11" value="b"> b) La automatización.</label>
+                <label class="option"><input type="radio" name="q11" value="c"> c) La impresión 3D.</label>
+                <label class="option"><input type="radio" name="q11" value="d"> d) La ciberseguridad.</label>
+            </div>
+            <div class="question"><p>12. ¿Cuál de los siguientes efectos de la digitalización es beneficioso para el medio ambiente?</p>
+                <label class="option"><input type="radio" name="q12" value="a"> a) Extensión del teletrabajo.</label>
+                <label class="option"><input type="radio" name="q12" value="b"> b) Rápidos ciclos de obsolescencia de dispositivos electrónicos.</label>
+                <label class="option"><input type="radio" name="q12" value="c"> c) Disminución del uso de papel.</label>
+                <label class="option"><input type="radio" name="q12" value="d"> d) Dos de las anteriores.</label>
+            </div>
+            <div class="question"><p>13. ¿Qué objetivo tienen las THD orientadas a la ciberseguridad?</p>
+                <label class="option"><input type="radio" name="q13" value="a"> a) Facilitar la innovación y la personalización.</label>
+                <label class="option"><input type="radio" name="q13" value="b"> b) Garantizar que los productos y servicios digitales sean seguros.</label>
+                <label class="option"><input type="radio" name="q13" value="c"> c) Ayudar a rastrear y optimizar la cadena de suministros.</label>
+                <label class="option"><input type="radio" name="q13" value="d"> d) Analizar datos y ayudar a comprender mejor las necesidades de los clientes.</label>
+            </div>
+            <div class="question"><p>14. ¿Qué efectos negativos pueden tener las THD?</p>
+                <label class="option"><input type="radio" name="q14" value="a"> a) Extensión del teletrabajo.</label>
+                <label class="option"><input type="radio" name="q14" value="b"> b) Reducción de desplazamiento.</label>
+                <label class="option"><input type="radio" name="q14" value="c"> c) La automatización.</label>
+                <label class="option"><input type="radio" name="q14" value="d"> d) Generación de residuos electrónicos.</label>
+            </div>
+            <div class="question"><p>15. ¿Cuál es el principal objetivo de las Tecnologías Habilitadoras Digitales (THD)?</p>
+                <label class="option"><input type="radio" name="q15" value="a"> a) Convertir el comercio tradicional en empresas digitales.</label>
+                <label class="option"><input type="radio" name="q15" value="b"> b) Crear nuevas herramientas de aplicación exclusiva en el sector de la informática.</label>
+                <label class="option"><input type="radio" name="q15" value="c"> c) Facilitar nuevas vías de entretenimiento digital.</label>
+                <label class="option"><input type="radio" name="q15" value="d"> d) Actuar como elementos de cambio en la transformación digital en diversos sectores.</label>
+            </div>
+            
+            <div class="button-container">
+                <button type="button" class="button" onclick="evaluateTest()">Evaluar Cuestionario</button>
+            </div>
+        </form>
+
+        <div id="results"></div>
+
+        <div class="exit-button-container">
+            <a href="../index.html" class="button">Volver al Menú Principal</a>
+        </div>
+    </div>
+
+    <script>
+        function evaluateTest() {
+            const correctAnswers = {
+                q1: "a", q2: "b", q3: "b", q4: "d", q5: "d",
+                q6: "b", q7: "c", q8: "a", q9: "d", q10: "b",
+                q11: "c", q12: "d", q13: "b", q14: "d", q15: "d"
+            };
+            
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const totalQuestions = 15;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const userAnswer = form.elements[questionName] ? form.elements[questionName].value : null;
+                
+                if (userAnswer && userAnswer === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+            
+            const grade = (score / totalQuestions) * 10;
+            const resultsDiv = document.getElementById('results');
+            
+            let message = `Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong> preguntas.<br>Tu nota es: <strong>${grade.toFixed(2)} / 10</strong>.`;
+            
+            resultsDiv.innerHTML = message;
+
+            if (grade >= 5) {
+                resultsDiv.className = 'results-pass';
+                resultsDiv.innerHTML += "<br>¡Enhorabuena, has aprobado!";
+            } else {
+                resultsDiv.className = 'results-fail';
+                resultsDiv.innerHTML += "<br>Necesitas repasar un poco más. ¡Ánimo!";
+            }
+        }
+    </script>
+
+</body>
+</html>
