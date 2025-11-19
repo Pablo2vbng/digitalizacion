@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario UF2 - Cloud, Edge, Fog Computing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #cbd5e1;
+            --header-color: #ffffff;
+            --accent-color: #00aaff;
+            --border-color: #334155;
+            --success-bg: #059669;
+            --fail-bg: #b91c1c;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: var(--card-color);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--header-color);
+            text-align: center;
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #29364a;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 5px;
+        }
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .option {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .button-container, .exit-button-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+        #results {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--header-color);
+        }
+        .results-pass {
+            background-color: var(--success-bg);
+        }
+        .results-fail {
+            background-color: var(--fail-bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario UF2: Cloud, Edge, Fog Computing</h1>
+        
+        <form id="quizForm">
+            <div class="question"><p>1. Las nubes privadas, en comparación con las nubes públicas:</p>
+                <label class="option"><input type="radio" name="q1" value="a"> a) Pertenecen a proveedores externos.</label>
+                <label class="option"><input type="radio" name="q1" value="b"> b) Ofrecen servicios bajo demanda.</label>
+                <label class="option"><input type="radio" name="q1" value="c"> c) Proporcionan más control y seguridad sobre los datos.</label>
+                <label class="option"><input type="radio" name="q1" value="d"> d) Ofrecen las mismas características que las públicas, pero a un precio mayor.</label>
+            </div>
+            <div class="question"><p>2. La solución edge computing, en relación con la latencia:</p>
+                <label class="option"><input type="radio" name="q2" value="a"> a) La reduce.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> b) La descentraliza.</label>
+                <label class="option"><input type="radio" name="q2" value="c"> c) No tiene impacto.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> d) La incrementa.</label>
+            </div>
+            <div class="question"><p>3. ¿Qué tecnología es fundamental para permitir el acceso remoto a recursos de la nube?</p>
+                <label class="option"><input type="radio" name="q3" value="a"> a) Ciberseguridad</label>
+                <label class="option"><input type="radio" name="q3" value="b"> b) Internet de las cosas (IoT)</label>
+                <label class="option"><input type="radio" name="q3" value="c"> c) Conexión a Internet</label>
+                <label class="option"><input type="radio" name="q3" value="d"> d) Inteligencia artificial (IA)</label>
+            </div>
+            <div class="question"><p>4. ¿Qué tipo de servicio en la nube permite a los usuarios ejecutar aplicaciones sin preocuparse por la infraestructura subyacente?</p>
+                <label class="option"><input type="radio" name="q4" value="a"> a) Plataforma como Servicio (PaaS)</label>
+                <label class="option"><input type="radio" name="q4" value="b"> b) Infraestructura como Servicio (IaaS)</label>
+                <label class="option"><input type="radio" name="q4" value="c"> c) Software como Servicio (SaaS)</label>
+                <label class="option"><input type="radio" name="q4" value="d"> d) Ninguna respuesta es correcta</label>
+            </div>
+            <div class="question"><p>5. ¿Cuáles de los siguientes problemas no se abordan con las soluciones de edge, fog y mist computing?</p>
+                <label class="option"><input type="radio" name="q5" value="a"> a) Falta de ancho de banda.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> b) Reducción de la latencia.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> c) Pérdida de datos.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> d) Sobrecarga de servidores.</label>
+            </div>
+            <div class="question"><p>6. ¿Qué tipo de nube combina recursos de nube pública y privada, permitiendo la transferencia de datos y aplicaciones entre ellas?</p>
+                <label class="option"><input type="radio" name="q6" value="a"> a) Nube pública</label>
+                <label class="option"><input type="radio" name="q6" value="b"> b) Nube privada</label>
+                <label class="option"><input type="radio" name="q6" value="c"> c) Nube híbrida</label>
+                <label class="option"><input type="radio" name="q6" value="d"> d) Nube comunitaria.</label>
+            </div>
+            <div class="question"><p>7. ¿Qué son los sistemas basados en la nube?</p>
+                <label class="option"><input type="radio" name="q7" value="a"> a) Dispositivos electrónicos que funcionan sin conexión a Internet.</label>
+                <label class="option"><input type="radio" name="q7" value="b"> b) Software instalado exclusivamente en servidores locales.</label>
+                <label class="option"><input type="radio" name="q7" value="c"> c) Plataformas que permiten acceder y gestionar datos a través de Internet.</label>
+                <label class="option"><input type="radio" name="q7" value="d"> d) Servidores que solo operan en redes privadas.</label>
+            </div>
+            <div class="question"><p>8. ¿Cuál de las siguientes opciones no es un beneficio típico de utilizar sistemas basados en la nube?</p>
+                <label class="option"><input type="radio" name="q8" value="a"> a) Escalabilidad</label>
+                <label class="option"><input type="radio" name="q8" value="b"> b) Seguridad reducida</label>
+                <label class="option"><input type="radio" name="q8" value="c"> c) Flexibilidad</label>
+                <label class="option"><input type="radio" name="q8" value="d"> d) Desarrollo de aplicaciones</label>
+            </div>
+            <div class="question"><p>9. Es una función principal del almacenamiento en la nube:</p>
+                <label class="option"><input type="radio" name="q9" value="a"> a) Enviar mensajes de texto en dispositivos móviles.</label>
+                <label class="option"><input type="radio" name="q9" value="b"> b) Realizar cálculos complejos a través de servidores locales.</label>
+                <label class="option"><input type="radio" name="q9" value="c"> c) Guardar y acceder a archivos a través de Internet.</label>
+                <label class="option"><input type="radio" name="q9" value="d"> d) Realizar transacciones bancarias.</label>
+            </div>
+            <div class="question"><p>10. Los contenedores en la nube son:</p>
+                <label class="option"><input type="radio" name="q10" value="a"> a) Tecnología de almacenamiento.</label>
+                <label class="option"><input type="radio" name="q10" value="b"> b) Tecnología de seguridad en la nube.</label>
+                <label class="option"><input type="radio" name="q10" value="c"> c) Tecnología de virtualización en la nube.</label>
+                <label class="option"><input type="radio" name="q10" value="d"> d) Tecnología de desarrollo de software.</label>
+            </div>
+            <div class="question"><p>11. La infraestructura como servicio (IaaS):</p>
+                <label class="option"><input type="radio" name="q11" value="a"> a) Proporciona aplicaciones completas, desde la infraestructura hasta el mantenimiento.</label>
+                <label class="option"><input type="radio" name="q11" value="b"> b) Ofrece todos los recursos de hardware y software necesarios para desarrollar aplicaciones.</label>
+                <label class="option"><input type="radio" name="q11" value="c"> c) Permite el acceso bajo demanda a servicios de infraestructura informática.</label>
+                <label class="option"><input type="radio" name="q11" value="d"> d) Permite alquilar un ordenador capaz de construir aplicaciones.</label>
+            </div>
+            <div class="question"><p>12. La principal función del servidor central en el cloud computing es:</p>
+                <label class="option"><input type="radio" name="q12" value="a"> a) Desarrollar sistemas que mejoren la comunicación entre diferentes empresas.</label>
+                <label class="option"><input type="radio" name="q12" value="b"> b) Tomar decisiones estratégicas relacionadas con la ciberdelincuencia.</label>
+                <label class="option"><input type="radio" name="q12" value="c"> c) Definir políticas internas de seguridad en una empresa.</label>
+                <label class="option"><input type="radio" name="q12" value="d"> d) Gestionar toda la comunicación entre los dispositivos clientes.</label>
+            </div>
+            <div class="question"><p>13. La implantación del cloud computing:</p>
+                <label class="option"><input type="radio" name="q13" value="a"> a) No es necesario realizar cambios en las infraestructuras de la empresa.</label>
+                <label class="option"><input type="radio" name="q13" value="b"> b) Es un proceso sencillo y sin desafíos.</label>
+                <label class="option"><input type="radio" name="q13" value="c"> c) No implica riesgos de seguridad.</label>
+                <label class="option"><input type="radio" name="q13" value="d"> d) Puede requerir la formación y capacitación de los empleados de la empresa.</label>
+            </div>
+            <div class="question"><p>14. ¿Cuál es la principal función del fog computing en relación con el edge computing y la cloud?</p>
+                <label class="option"><input type="radio" name="q14" value="a"> a) Realizar todo el procesamiento de datos cerca de la fuente.</label>
+                <label class="option"><input type="radio" name="q14" value="b"> b) Descentralizar parte del procesamiento.</label>
+                <label class="option"><input type="radio" name="q14" value="c"> c) Llevar el procesamiento más cerca de la fuente de datos.</label>
+                <label class="option"><input type="radio" name="q14" value="d"> d) Proporcionar nodos de procesamiento intermedios.</label>
+            </div>
+
+            <div class="button-container">
+                <button type="button" class="button" onclick="evaluateTest()">Evaluar Cuestionario</button>
+            </div>
+        </form>
+
+        <div id="results"></div>
+
+        <div class="exit-button-container">
+            <a href="../index.html" class="button">Volver al Menú Principal</a>
+        </div>
+    </div>
+
+    <script>
+        function evaluateTest() {
+            // Note: Questions are numbered 1-14, corresponding to q1-q14
+            const correctAnswers = {
+                q1: "c", q2: "a", q3: "c", q4: "c", q5: "c",
+                q6: "c", q7: "c", q8: "b", q9: "c", q10: "c",
+                q11: "c", q12: "d", q13: "d", q14: "d"
+            };
+            
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const totalQuestions = 14;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const userAnswer = form.elements[questionName] ? form.elements[questionName].value : null;
+                
+                if (userAnswer && userAnswer === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+            
+            const grade = (score / totalQuestions) * 10;
+            const resultsDiv = document.getElementById('results');
+            
+            let message = `Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong> preguntas.<br>Tu nota es: <strong>${grade.toFixed(2)} / 10</strong>.`;
+            
+            resultsDiv.innerHTML = message;
+
+            if (grade >= 5) {
+                resultsDiv.className = 'results-pass';
+                resultsDiv.innerHTML += "<br>¡Enhorabuena, has aprobado!";
+            } else {
+                resultsDiv.className = 'results-fail';
+                resultsDiv.innerHTML += "<br>Necesitas repasar un poco más. ¡Ánimo!";
+            }
+        }
+    </script>
+
+</body>
+</html>

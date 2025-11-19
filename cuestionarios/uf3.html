@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario UF3 - Tecnologías Habilitadoras Digitales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #cbd5e1;
+            --header-color: #ffffff;
+            --accent-color: #00aaff;
+            --border-color: #334155;
+            --success-bg: #059669;
+            --fail-bg: #b91c1c;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: var(--card-color);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--header-color);
+            text-align: center;
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #29364a;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 5px;
+        }
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .option {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .button-container, .exit-button-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+        #results {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--header-color);
+        }
+        .results-pass {
+            background-color: var(--success-bg);
+        }
+        .results-fail {
+            background-color: var(--fail-bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario UF2: Tecnologías Habilitadoras Digitales</h1>
+        
+        <form id="quizForm">
+            <div class="question"><p>1. ¿Cuál de las siguientes definiciones describe correctamente el concepto de domótica?</p>
+                <label class="option"><input type="radio" name="q1" value="a"> a) La domótica es un tipo de tecnología utilizada en la agricultura para optimizar el rendimiento de los cultivos.</label>
+                <label class="option"><input type="radio" name="q1" value="b"> b) La domótica es un término utilizado para describir la automatización de edificios comerciales.</label>
+                <label class="option"><input type="radio" name="q1" value="c"> c) La domótica es el uso de sistemas integrados para controlar y automatizar dispositivos de hogar, como la iluminación, calefacción, ventilación y sistemas de seguridad.</label>
+                <label class="option"><input type="radio" name="q1" value="d"> d) La domótica es un tipo de tecnología utilizada en la venta online para llegar a más clientes potenciales.</label>
+            </div>
+            <div class="question"><p>2. Es una función de los robots de patrulla:</p>
+                <label class="option"><input type="radio" name="q2" value="a"> a) Cuidar de niños en escuelas infantiles para evitar que se hagan daño.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> b) Entregar paquetes en entornos urbanos.</label>
+                <label class="option"><input type="radio" name="q2" value="c"> c) Vigilar zonas y alertar sobre actividades sospechosas.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> d) Ayudar a clientes en tiendas y centros de servicio.</label>
+            </div>
+            <div class="question"><p>3. La mayor velocidad en la transmisión de datos del 5G permite:</p>
+                <label class="option"><input type="radio" name="q3" value="a"> a) Incrementar la capacidad de descarga y carga de archivos.</label>
+                <label class="option"><input type="radio" name="q3" value="b"> b) Evitar el blanqueo de dinero.</label>
+                <label class="option"><input type="radio" name="q3" value="c"> c) Mejorar la privacidad de los usuarios.</label>
+                <label class="option"><input type="radio" name="q3" value="d"> d) Mejorar la seguridad biométrica.</label>
+            </div>
+            <div class="question"><p>4. Pokemon Go es un videojuego que utiliza:</p>
+                <label class="option"><input type="radio" name="q4" value="a"> a) La Inteligencia artificial.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> b) La impresión 3D.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> c) Realidad virtual.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> d) Realidad aumentada.</label>
+            </div>
+            <div class="question"><p>5. El blockchain es:</p>
+                <label class="option"><input type="radio" name="q5" value="a"> a) Un protocolo de seguridad para redes sociales.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> b) Una base de datos que almacena información de forma segura.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> c) Un registro digital descentralizado y seguro de transacciones y datos.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> d) Una criptomoneda.</label>
+            </div>
+            <div class="question"><p>6. ¿Cuál de las siguientes afirmaciones describe mejor una característica clave de la seguridad en los hogares inteligentes?</p>
+                <label class="option"><input type="radio" name="q6" value="a"> a) Los dispositivos de seguridad en los hogares inteligentes no pueden integrarse con otros sistemas de seguridad, como alarmas de incendio o cámaras de vigilancia.</label>
+                <label class="option"><input type="radio" name="q6" value="b"> b) Los hogares inteligentes son inherentemente menos seguros que los hogares convencionales.</label>
+                <label class="option"><input type="radio" name="q6" value="c"> c) La encriptación de datos y la autenticación de usuarios son medidas comunes para proteger la seguridad en los hogares inteligentes.</label>
+                <label class="option"><input type="radio" name="q6" value="d"> d) Los sistemas de seguridad en los hogares inteligentes no pueden ser controlados de forma remota.</label>
+            </div>
+            <div class="question"><p>7. ¿Qué función cumple la tecnología en el modelo de ciudad inteligente?</p>
+                <label class="option"><input type="radio" name="q7" value="a"> a) Reducir la seguridad.</label>
+                <label class="option"><input type="radio" name="q7" value="b"> b) Limitar el desarrollo sostenible.</label>
+                <label class="option"><input type="radio" name="q7" value="c"> c) Aumentar el consumo de recursos.</label>
+                <label class="option"><input type="radio" name="q7" value="d"> d) Mejorar la calidad de vida de sus ciudadanos.</label>
+            </div>
+            <div class="question"><p>8. Las tecnologías inteligentes son aquellas capaces de simular:</p>
+                <label class="option"><input type="radio" name="q8" value="a"> a) La evolución biológica.</label>
+                <label class="option"><input type="radio" name="q8" value="b"> b) El comportamiento humano.</label>
+                <label class="option"><input type="radio" name="q8" value="c"> c) La velocidad de procesamiento de datos.</label>
+                <label class="option"><input type="radio" name="q8" value="d"> d) La física cuántica.</label>
+            </div>
+            <div class="question"><p>9. El Internet de las cosas es conocido especialmente por su aplicación en...</p>
+                <label class="option"><input type="radio" name="q9" value="a"> a) La construcción.</label>
+                <label class="option"><input type="radio" name="q9" value="b"> b) La educación.</label>
+                <label class="option"><input type="radio" name="q9" value="c"> c) La agricultura.</label>
+                <label class="option"><input type="radio" name="q9" value="d"> d) Los hogares.</label>
+            </div>
+            <div class="question"><p>10. Los robots colaborativos (cobots):</p>
+                <label class="option"><input type="radio" name="q10" value="a"> a) Se emplean en exploración espacial.</label>
+                <label class="option"><input type="radio" name="q10" value="b"> b) Ayudan a la rehabilitación con ejercicios guiados.</label>
+                <label class="option"><input type="radio" name="q10" value="c"> c) Solo realizan tareas autónomas.</label>
+                <label class="option"><input type="radio" name="q10" value="d"> d) Trabajan junto a humanos en entornos de producción seguros.</label>
+            </div>
+            <div class="question"><p>11. ¿Qué es la biometría?</p>
+                <label class="option"><input type="radio" name="q11" value="a"> a) Un sistema que permite realizar pagos en entornos seguros.</label>
+                <label class="option"><input type="radio" name="q11" value="b"> b) Una tecnología para autenticar la identidad.</label>
+                <label class="option"><input type="radio" name="q11" value="c"> c) Un tipo de realidad aumentada.</label>
+                <label class="option"><input type="radio" name="q11" value="d"> d) Un método de pago digital</label>
+            </div>
+            <div class="question"><p>12. Alexa, Siri y Google Assistant son:</p>
+                <label class="option"><input type="radio" name="q12" value="a"> a) Sistemas de seguridad inteligentes.</label>
+                <label class="option"><input type="radio" name="q12" value="b"> b) Electrodomésticos inteligentes.</label>
+                <label class="option"><input type="radio" name="q12" value="c"> c) Sistemas de blockchain.</label>
+                <label class="option"><input type="radio" name="q12" value="d"> d) Asistentes de voz</label>
+            </div>
+            <div class="question"><p>13. La inteligencia artificial permite...</p>
+                <label class="option"><input type="radio" name="q13" value="a"> a) Tomar decisiones autónomas, aunque no se disponga de datos.</label>
+                <label class="option"><input type="radio" name="q13" value="b"> b) Reemplazar a los humanos en todos los trabajos.</label>
+                <label class="option"><input type="radio" name="q13" value="c"> c) Prever el futuro de manera precisa.</label>
+                <label class="option"><input type="radio" name="q13" value="d"> d) Aprender por sí misma o mediante el análisis y el procesamiento de datos.</label>
+            </div>
+            <div class="question"><p>14. ¿A qué se denomina “Industria 4.0”?</p>
+                <label class="option"><input type="radio" name="q14" value="a"> a) Cuando las tecnologías se aplican en procesos de fabricación industrial.</label>
+                <label class="option"><input type="radio" name="q14" value="b"> b) Cuando las tecnologías se aplican en procesos relacionados con la sanidad.</label>
+                <label class="option"><input type="radio" name="q14" value="c"> c) Cuando las tecnologías se aplican en procesos relacionados con la educación.</label>
+                <label class="option"><input type="radio" name="q14" value="d"> d) Cuando las tecnologías se aplican en procesos relacionados con el comercio.</label>
+            </div>
+            <div class="question"><p>15. ¿Qué tecnología se emplea para la creación de objetos tridimensionales a partir de modelos digitales?</p>
+                <label class="option"><input type="radio" name="q15" value="a"> a) Realidad virtual.</label>
+                <label class="option"><input type="radio" name="q15" value="b"> b) Blockchain.</label>
+                <label class="option"><input type="radio" name="q15" value="c"> c) Internet de las cosas.</label>
+                <label class="option"><input type="radio" name="q15" value="d"> d) Impresión 3D.</label>
+            </div>
+            
+            <div class="button-container">
+                <button type="button" class="button" onclick="evaluateTest()">Evaluar Cuestionario</button>
+            </div>
+        </form>
+
+        <div id="results"></div>
+
+        <div class="exit-button-container">
+            <a href="../index.html" class="button">Volver al Menú Principal</a>
+        </div>
+    </div>
+
+    <script>
+        function evaluateTest() {
+            const correctAnswers = {
+                q1: "c", q2: "c", q3: "a", q4: "d", q5: "c",
+                q6: "c", q7: "d", q8: "b", q9: "d", q10: "d",
+                q11: "b", q12: "d", q13: "d", q14: "a", q15: "d"
+            };
+            
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const totalQuestions = 15;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const userAnswer = form.elements[questionName] ? form.elements[questionName].value : null;
+                
+                if (userAnswer && userAnswer === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+            
+            const grade = (score / totalQuestions) * 10;
+            const resultsDiv = document.getElementById('results');
+            
+            let message = `Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong> preguntas.<br>Tu nota es: <strong>${grade.toFixed(2)} / 10</strong>.`;
+            
+            resultsDiv.innerHTML = message;
+
+            if (grade >= 5) {
+                resultsDiv.className = 'results-pass';
+                resultsDiv.innerHTML += "<br>¡Enhorabuena, has aprobado!";
+            } else {
+                resultsDiv.className = 'results-fail';
+                resultsDiv.innerHTML += "<br>Necesitas repasar un poco más. ¡Ánimo!";
+            }
+        }
+    </script>
+
+</body>
+</html>

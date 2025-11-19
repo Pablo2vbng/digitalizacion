@@ -1,1 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario UF3 y UF4 - Digitalización Aplicada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #1e293b;
+            --text-color: #cbd5e1;
+            --header-color: #ffffff;
+            --accent-color: #00aaff;
+            --border-color: #334155;
+            --success-bg: #059669;
+            --fail-bg: #b91c1c;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: var(--card-color);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        h1, h2 {
+            color: var(--header-color);
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.2em;
+        }
+        h2 {
+            font-size: 1.8em;
+        }
+        .summary {
+            background-color: #29364a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #29364a;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 5px;
+        }
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+        .option {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .button-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #0088cc;
+            transform: scale(1.05);
+        }
+        #results {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--header-color);
+        }
+        .results-pass {
+            background-color: var(--success-bg);
+        }
+        .results-fail {
+            background-color: var(--fail-bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Digitalización Aplicada a los Sectores Productivos (UF3 y UF4)</h1>
+        
+        <div class="summary">
+            <h2>Resumen del Temario</h2>
+            <p>La <strong>transformación digital</strong> consiste en integrar <strong>Tecnologías Habilitadoras Digitales (THD)</strong> como IA, IoT y Cloud Computing en todos los procesos empresariales para optimizar operaciones y mejorar la experiencia del cliente. Esto da lugar a entornos inteligentes como edificios, hogares (domótica), fábricas (Industria 4.0) y ciudades inteligentes, todos enfocados en la eficiencia, sostenibilidad y confort.</p>
+            <p>La <strong>computación en la nube (Cloud)</strong> es esencial en este proceso, ya que ofrece servicios remotos de almacenamiento y procesamiento de datos con ventajas clave como la <strong>escalabilidad</strong>, <strong>flexibilidad</strong> y un modelo de <strong>pago por uso</strong>. Los principales modelos de servicio son <strong>IaaS</strong> (infraestructura), <strong>PaaS</strong> (plataforma) y <strong>SaaS</strong> (software). Tendencias como el <strong>Edge Computing</strong> complementan la nube al procesar datos más cerca de su origen, reduciendo la latencia.</p>
+        </div>
 
+        <h2>Cuestionario de Autoevaluación</h2>
+        <form id="quizForm">
+            <!-- PREGUNTAS UF3 -->
+            <div class="question"><p>1. ¿Cuál es el objetivo principal de la transformación digital en las empresas?</p>
+                <label class="option"><input type="radio" name="q1" value="a"> a) Reducir únicamente los costes de personal.</label>
+                <label class="option"><input type="radio" name="q1" value="b"> b) Optimizar operaciones, mejorar la experiencia del cliente y crear nuevos modelos de negocio.</label>
+                <label class="option"><input type="radio" name="q1" value="c"> c) Implementar software únicamente para el departamento de marketing.</label>
+                <label class="option"><input type="radio" name="q1" value="d"> d) Volver a los procesos de negocio tradicionales.</label>
+            </div>
+            <div class="question"><p>2. ¿Qué tecnologías se combinan habitualmente en las "tecnologías inteligentes"?</p>
+                <label class="option"><input type="radio" name="q2" value="a"> a) Radio, televisión y teléfono fijo.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> b) Máquina de escribir, fax y telégrafo.</label>
+                <label class="option"><input type="radio" name="q2" value="c"> c) IoT, IA, Big Data, computación en la nube y biometría.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> d) Únicamente el uso de hojas de cálculo.</label>
+            </div>
+             <div class="question"><p>3. El principal objetivo de los edificios inteligentes es buscar...</p>
+                <label class="option"><input type="radio" name="q3" value="a"> a) El máximo lujo sin importar el coste.</label>
+                <label class="option"><input type="radio" name="q3" value="b"> b) La eficiencia energética y el confort.</label>
+                <label class="option"><input type="radio" name="q3" value="c"> c) La desconexión total de las redes eléctricas.</label>
+                <label class="option"><input type="radio" name="q3" value="d"> d) Un diseño estético de estilo clásico.</label>
+            </div>
+            <div class="question"><p>4. ¿Qué término se utiliza para describir una fábrica inteligente y conectada?</p>
+                <label class="option"><input type="radio" name="q4" value="a"> a) Taller artesanal.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> b) Cadena de montaje 1.0.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> c) Factoría manual.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> d) Industria 4.0.</label>
+            </div>
+            <div class="question"><p>5. ¿Para qué se utiliza la IA en las fábricas inteligentes según el temario?</p>
+                <label class="option"><input type="radio" name="q5" value="a"> a) Para la contabilidad manual de piezas.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> b) Para el mantenimiento predictivo de la maquinaria.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> c) Para servir café a los empleados.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> d) Para diseñar el logo de la empresa.</label>
+            </div>
+             <div class="question"><p>6. Los robots colaborativos que trabajan junto a humanos se denominan:</p>
+                <label class="option"><input type="radio" name="q6" value="a"> a) Autómatas.</label>
+                <label class="option"><input type="radio" name="q6" value="b"> b) Drones.</label>
+                <label class="option"><input type="radio" name="q6" value="c"> c) Cobots.</label>
+                <label class="option"><input type="radio" name="q6" value="d"> d) Androides.</label>
+            </div>
+            <div class="question"><p>7. El concepto de "hogar inteligente" está directamente relacionado con:</p>
+                <label class="option"><input type="radio" name="q7" value="a"> a) La jardinería.</label>
+                <label class="option"><input type="radio" name="q7" value="b"> b) La domótica.</label>
+                <label class="option"><input type="radio" name="q7" value="c"> c) La fontanería tradicional.</label>
+                <label class="option"><input type="radio" name="q7" value="d"> d) La decoración de interiores.</label>
+            </div>
+            <div class="question"><p>8. ¿Cuál es el fin principal de una "ciudad inteligente"?</p>
+                <label class="option"><input type="radio" name="q8" value="a"> a) Atraer únicamente turismo de lujo.</label>
+                <label class="option"><input type="radio" name="q8" value="b"> b) Aumentar el número de vehículos en circulación.</label>
+                <label class="option"><input type="radio" name="q8" value="c"> c) Mejorar la calidad de vida y la sostenibilidad.</label>
+                <label class="option"><input type="radio" name="q8" value="d"> d) Reducir el número de parques y zonas verdes.</label>
+            </div>
+            <div class="question"><p>9. ¿Cuál de los siguientes es un ejemplo de aplicación en una ciudad inteligente?</p>
+                <label class="option"><input type="radio" name="q9" value="a"> a) Carreras de caballos en el centro de la ciudad.</label>
+                <label class="option"><input type="radio" name="q9" value="b"> b) Sensores para aparcamiento inteligente y gestión del tráfico.</label>
+                <label class="option"><input type="radio" name="q9" value="c"> c) Aumentar los semáforos sin sincronización.</label>
+                <label class="option"><input type="radio" name="q9" value="d"> d) La construcción de más edificios sin criterios de eficiencia.</label>
+            </div>
+            <div class="question"><p>10. Airbus utiliza sensores IoT para...</p>
+                <label class="option"><input type="radio" name="q10" value="a"> a) Medir la satisfacción de los pasajeros durante el vuelo.</label>
+                <label class="option"><input type="radio" name="q10" value="b"> b) Monitorizar los motores y prevenir fallos.</label>
+                <label class="option"><input type="radio" name="q10" value="c"> c) Controlar el servicio de catering.</label>
+                <label class="option"><input type="radio" name="q10" value="d"> d) Cambiar el color de las luces de la cabina.</label>
+            </div>
+            <div class="question"><p>11. ¿Qué favorecen las THD a nivel social y económico?</p>
+                <label class="option"><input type="radio" name="q11" value="a"> a) El aislamiento y la desconexión.</label>
+                <label class="option"><input type="radio" name="q11" value="b"> b) La innovación, el desarrollo económico y una sociedad conectada.</label>
+                <label class="option"><input type="radio" name="q11" value="c"> c) El estancamiento económico.</label>
+                <label class="option"><input type="radio" name="q11" value="d"> d) La reducción de la participación ciudadana.</label>
+            </div>
+            <div class="question"><p>12. Una empresa tradicional se diferencia de una digital principalmente en que...</p>
+                <label class="option"><input type="radio" name="q12" value="a"> a) La tradicional no tiene empleados.</label>
+                <label class="option"><input type="radio" name="q12" value="b"> b) La digital no tiene clientes.</label>
+                <label class="option"><input type="radio" name="q12" value="c"> c) La digital integra tecnologías en todos sus procesos, mientras que la tradicional opera de forma más manual o con sistemas aislados.</label>
+                <label class="option"><input type="radio" name="q12" value="d"> d) La tradicional solo vende productos físicos.</label>
+            </div>
+
+            <!-- PREGUNTAS UF4 -->
+            <div class="question"><p>13. ¿Qué es la computación en la nube (cloud computing)?</p>
+                <label class="option"><input type="radio" name="q13" value="a"> a) Un sistema para predecir el tiempo meteorológico.</label>
+                <label class="option"><input type="radio" name="q13" value="b"> b) Guardar archivos exclusivamente en un disco duro externo.</label>
+                <label class="option"><input type="radio" name="q13" value="c"> c) Almacenar, procesar y acceder a datos y aplicaciones a través de Internet.</label>
+                <label class="option"><input type="radio" name="q13" value="d"> d) Un nuevo tipo de ordenador portátil.</label>
+            </div>
+            <div class="question"><p>14. ¿Cuál es una diferencia clave entre el modelo en la nube y el tradicional (local)?</p>
+                <label class="option"><input type="radio" name="q14" value="a"> a) El modelo en la nube requiere actualizaciones manuales.</label>
+                <label class="option"><input type="radio" name="q14" value="b"> b) El modelo local permite el acceso remoto desde cualquier lugar.</label>
+                <label class="option"><input type="radio" name="q14" value="c"> c) El modelo en la nube tiene costes ajustados al uso y copias de seguridad automáticas.</label>
+                <label class="option"><input type="radio" name="q14" value="d"> d) El modelo local tiene menores costes de hardware.</label>
+            </div>
+            <div class="question"><p>15. La normativa de privacidad europea mencionada en el temario es:</p>
+                <label class="option"><input type="radio" name="q15" value="a"> a) La Ley de Propiedad Intelectual.</label>
+                <label class="option"><input type="radio" name="q15" value="b"> b) El RGPD (Reglamento General de Protección de Datos).</label>
+                <label class="option"><input type="radio" name="q15" value="c"> c) El Código de Comercio.</label>
+                <label class="option"><input type="radio" name="q15" value="d"> d) La normativa ISO 9001.</label>
+            </div>
+            <div class="question"><p>16. ¿Qué significa "Escalabilidad" en el contexto del cloud computing?</p>
+                <label class="option"><input type="radio" name="q16" value="a"> a) Que solo se puede acceder subiendo una escalera.</label>
+                <label class="option"><input type="radio" name="q16" value="b"> b) La capacidad de ajustar los recursos (potencia, almacenamiento) según la demanda.</label>
+                <label class="option"><input type="radio" name="q16" value="c"> c) Una medida de seguridad fija que no se puede cambiar.</label>
+                <label class="option"><input type="radio" name="q16" value="d"> d) Que los costes son siempre fijos e inalterables.</label>
+            </div>
+            <div class="question"><p>17. Gmail, Google Drive y Office 365 son ejemplos de qué modelo de servicio en la nube?</p>
+                <label class="option"><input type="radio" name="q17" value="a"> a) IaaS (Infraestructura como Servicio).</label>
+                <label class="option"><input type="radio" name="q17" value="b"> b) PaaS (Plataforma como Servicio).</label>
+                <label class="option"><input type="radio" name="q17" value="c"> c) SaaS (Software como Servicio).</label>
+                <label class="option"><input type="radio" name="q17" value="d"> d) CaaS (Contenedor como Servicio).</label>
+            </div>
+            <div class="question"><p>18. ¿Qué modelo de servicio en la nube ofrece acceso a servidores, redes y almacenamiento?</p>
+                <label class="option"><input type="radio" name="q18" value="a"> a) IaaS.</label>
+                <label class="option"><input type="radio" name="q18" value="b"> b) PaaS.</label>
+                <label class="option"><input type="radio" name="q18" value="c"> c) SaaS.</label>
+                <label class="option"><input type="radio" name="q18" value="d"> d) Todas las anteriores.</label>
+            </div>
+            <div class="question"><p>19. En el modelo PaaS, ¿de qué se encarga principalmente el usuario?</p>
+                <label class="option"><input type="radio" name="q19" value="a"> a) De gestionar los servidores físicos y la red.</label>
+                <label class="option"><input type="radio" name="q19" value="b"> b) De desarrollar y ejecutar sus propias aplicaciones.</label>
+                <label class="option"><input type="radio" name="q19" value="c"> c) De la seguridad del centro de datos.</label>
+                <label class="option"><input type="radio" name="q19" value="d"> d) De mantener el sistema operativo actualizado.</label>
+            </div>
+            <div class="question"><p>20. ¿Qué son los "contenedores" en la nube, como Docker o Kubernetes?</p>
+                <label class="option"><input type="radio" name="q20" value="a"> a) Cajas físicas para transportar servidores.</label>
+                <label class="option"><input type="radio" name="q20" value="b"> b) Paquetes de software que incluyen todo lo necesario para ejecutar una aplicación en cualquier entorno.</label>
+                <label class="option"><input type="radio" name="q20" value="c"> c) Dispositivos de almacenamiento externo.</label>
+                <label class="option"><input type="radio" name="q20" value="d"> d) Una medida de seguridad para encriptar datos.</label>
+            </div>
+            <div class="question"><p>21. ¿Cuál es el principal beneficio de usar contenedores?</p>
+                <label class="option"><input type="radio" name="q21" value="a"> a) Reducen la velocidad de las aplicaciones.</label>
+                <label class="option"><input type="radio" name="q21" value="b"> b) Aumentan la portabilidad y la eficiencia en el despliegue.</label>
+                <label class="option"><input type="radio" name="q21" value="c"> c) Solo funcionan en un único sistema operativo.</label>
+                <label class="option"><input type="radio" name="q21" value="d"> d) Son muy costosos de implementar.</label>
+            </div>
+            <div class="question"><p>22. ¿Qué tendencia busca realizar el procesamiento de datos cerca de la fuente donde se generan?</p>
+                <label class="option"><input type="radio" name="q22" value="a"> a) Cloud Computing tradicional.</label>
+                <label class="option"><input type="radio" name="q22" value="b"> b) Mainframe Computing.</label>
+                <label class="option"><input type="radio" name="q22" value="c"> c) Edge Computing.</label>
+                <label class="option"><input type="radio" name="q22" value="d"> d) Local Computing.</label>
+            </div>
+            <div class="question"><p>23. La principal ventaja de Fog y Edge Computing frente al Cloud es:</p>
+                <label class="option"><input type="radio" name="q23" value="a"> a) Mayor capacidad de almacenamiento centralizado.</label>
+                <label class="option"><input type="radio" name="q23" value="b"> b) Menor latencia y mayor velocidad de respuesta.</label>
+                <label class="option"><input type="radio" name="q23" value="c"> c) Costes más elevados.</label>
+                <label class="option"><input type="radio" name="q23" value="d"> d) Mayor dependencia de una conexión a Internet de alta velocidad.</label>
+            </div>
+             <div class="question"><p>24. Mist Computing realiza el procesamiento...</p>
+                <label class="option"><input type="radio" name="q24" value="a"> a) En el centro de datos principal (nube).</label>
+                <label class="option"><input type="radio" name="q24" value="b"> b) En nodos intermedios (niebla).</label>
+                <label class="option"><input type="radio" name="q24" value="c"> c) Dentro del propio dispositivo que genera los datos.</label>
+                <label class="option"><input type="radio" name="q24" value="d"> d) Solo en ordenadores de sobremesa.</label>
+            </div>
+             <div class="question"><p>25. ¿Por qué la ciberseguridad es esencial en la nube?</p>
+                <label class="option"><input type="radio" name="q25" value="a"> a) Porque los datos no tienen ningún valor.</label>
+                <label class="option"><input type="radio" name="q25" value="b"> b) Para protegerse contra riesgos como la pérdida o robo de datos y los ciberataques.</label>
+                <label class="option"><input type="radio" name="q25" value="c"> c) Porque la ley no obliga a proteger los datos.</label>
+                <label class="option"><input type="radio" name="q25" value="d"> d) La ciberseguridad no es importante en la nube.</label>
+            </div>
+            
+            <div class="button-container">
+                <button type="button" class="button" onclick="evaluateTest()">Corregir Test</button>
+            </div>
+        </form>
+
+        <div id="results"></div>
+
+    </div>
+
+    <script>
+        function evaluateTest() {
+            const correctAnswers = {
+                q1: "b", q2: "c", q3: "b", q4: "d", q5: "b",
+                q6: "c", q7: "b", q8: "c", q9: "b", q10: "b",
+                q11: "b", q12: "c", q13: "c", q14: "c", q15: "b",
+                q16: "b", q17: "c", q18: "a", q19: "b", q20: "b",
+                q21: "b", q22: "c", q23: "b", q24: "c", q25: "b"
+            };
+            
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            const totalQuestions = 25;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const userAnswer = form.elements[questionName] ? form.elements[questionName].value : null;
+                
+                if (userAnswer && userAnswer === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+            
+            const grade = (score / totalQuestions) * 10;
+            const resultsDiv = document.getElementById('results');
+            
+            let message = `Has acertado <strong>${score}</strong> de <strong>${totalQuestions}</strong> preguntas.<br>Tu nota es: <strong>${grade.toFixed(2)} / 10</strong>.`;
+            
+            resultsDiv.innerHTML = message;
+
+            if (grade >= 5) {
+                resultsDiv.className = 'results-pass';
+                resultsDiv.innerHTML += "<br>¡Enhorabuena, has aprobado!";
+            } else {
+                resultsDiv.className = 'results-fail';
+                resultsDiv.innerHTML += "<br>Necesitas repasar un poco más. ¡Ánimo!";
+            }
+        }
+    </script>
+
+</body>
+</html>
