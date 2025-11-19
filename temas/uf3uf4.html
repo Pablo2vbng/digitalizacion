@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuestionario UF3 y UF4 - Digitalización Aplicada</title>
+    <title>Guía Completa y Cuestionario UF3 y UF4 - Digitalización Aplicada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -17,6 +17,8 @@
             --border-color: #334155;
             --success-bg: #059669;
             --fail-bg: #b91c1c;
+            --explanation-bg: #29364a;
+            --subtle-border: #475569;
         }
         body {
             font-family: 'Roboto', sans-serif;
@@ -24,6 +26,7 @@
             color: var(--text-color);
             margin: 0;
             padding: 20px;
+            line-height: 1.7;
         }
         .container {
             max-width: 900px;
@@ -34,30 +37,42 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border-color);
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: var(--header-color);
             text-align: center;
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-        h1 {
-            font-size: 2.2em;
-        }
-        h2 {
-            font-size: 1.8em;
-        }
-        .summary {
-            background-color: #29364a;
-            padding: 20px;
+        h1 { font-size: 2.4em; }
+        h2 { font-size: 1.9em; margin-top: 50px; }
+        h3 { font-size: 1.5em; text-align: left; border-bottom-width: 1px; }
+        
+        .summary, .explanation-section {
+            background-color: var(--explanation-bg);
+            padding: 25px;
             border-radius: 8px;
             margin-bottom: 40px;
-            line-height: 1.6;
+            border: 1px solid var(--subtle-border);
         }
+        
+        .explanation-box {
+            background-color: #1a2433;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .explanation-box h4 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        
         .question {
             margin-bottom: 20px;
             padding: 15px;
-            background: #29364a;
+            background: var(--explanation-bg);
             border-left: 5px solid var(--accent-color);
             border-radius: 5px;
         }
@@ -106,24 +121,83 @@
             text-align: center;
             color: var(--header-color);
         }
-        .results-pass {
-            background-color: var(--success-bg);
-        }
-        .results-fail {
-            background-color: var(--fail-bg);
-        }
+        .results-pass { background-color: var(--success-bg); }
+        .results-fail { background-color: var(--fail-bg); }
+        
+        strong { color: var(--accent-color); font-weight: bold; }
+        code { background-color: #334155; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Digitalización Aplicada a los Sectores Productivos (UF3 y UF4)</h1>
+        <h1>Guía Completa: Digitalización Aplicada (UF3 y UF4)</h1>
         
         <div class="summary">
-            <h2>Resumen del Temario</h2>
-            <p>La <strong>transformación digital</strong> consiste en integrar <strong>Tecnologías Habilitadoras Digitales (THD)</strong> como IA, IoT y Cloud Computing en todos los procesos empresariales para optimizar operaciones y mejorar la experiencia del cliente. Esto da lugar a entornos inteligentes como edificios, hogares (domótica), fábricas (Industria 4.0) y ciudades inteligentes, todos enfocados en la eficiencia, sostenibilidad y confort.</p>
-            <p>La <strong>computación en la nube (Cloud)</strong> es esencial en este proceso, ya que ofrece servicios remotos de almacenamiento y procesamiento de datos con ventajas clave como la <strong>escalabilidad</strong>, <strong>flexibilidad</strong> y un modelo de <strong>pago por uso</strong>. Los principales modelos de servicio son <strong>IaaS</strong> (infraestructura), <strong>PaaS</strong> (plataforma) y <strong>SaaS</strong> (software). Tendencias como el <strong>Edge Computing</strong> complementan la nube al procesar datos más cerca de su origen, reduciendo la latencia.</p>
+            <h2>Resumen General</h2>
+            <p>Este temario explora la <strong>transformación digital</strong>, que es la integración de <strong>Tecnologías Habilitadoras Digitales (THD)</strong> en las empresas. En la UF3, vimos cómo esto crea entornos inteligentes (edificios, fábricas 4.0, ciudades). En la UF4, nos centramos en el pilar que hace posible gran parte de esta revolución: la <strong>computación en la nube (Cloud Computing)</strong> y sus nuevas tendencias.</p>
         </div>
 
+        <!-- SECCIÓN DE EXPLICACIONES DETALLADAS -->
+        <div class="explanation-section">
+            <h2>Conceptos Clave Explicados</h2>
+
+            <h3>1. ¿Qué es el Cloud Computing? La Analogía de la Red Eléctrica</h3>
+            <p>Imagina que necesitas electricidad en tu casa. No construyes tu propia central eléctrica en el jardín. Simplemente, te conectas a la red eléctrica nacional y pagas solo por la electricidad que consumes cada mes. Es eficiente, escalable y no tienes que preocuparte por el mantenimiento.</p>
+            <p>El <strong>Cloud Computing</strong> es exactamente lo mismo, pero para la informática: en lugar de comprar y mantener tus propios servidores (la "central eléctrica"), alquilas potencia de cálculo, almacenamiento y servicios a un proveedor como Amazon (AWS), Google o Microsoft (Azure) a través de Internet (la "red eléctrica"). Pagas solo por lo que usas.</p>
+
+            <h3>2. IaaS vs. PaaS vs. SaaS: La Analogía de la "Pizza como Servicio"</h3>
+            <p>Esta es la mejor manera de entender los tres modelos principales de servicios en la nube. Imagina que quieres cenar pizza:</p>
+            
+            <div class="explanation-box">
+                <h4>Modelo Tradicional (On-Premises): Hacer la pizza en casa</h4>
+                <p>Tú te encargas de TODO: comprar la harina, el tomate, el queso (ingredientes), usar tu propio horno, mesa, gas (la infraestructura), preparar la masa, montarla y cocinarla. Tienes control total, pero también toda la responsabilidad y el trabajo.</p>
+                <p><em>Esto equivale a una empresa que compra y gestiona sus propios servidores físicos.</em></p>
+            </div>
+            
+            <div class="explanation-box">
+                <h4>IaaS (Infraestructura como Servicio): Pizza para llevar y hornear</h4>
+                <p>Compras una pizza pre-hecha en el supermercado. La masa, la salsa y los ingredientes ya están puestos. El supermercado te ha dado la <strong>infraestructura básica</strong>. Tú solo te encargas de poner tu horno, el gas, los platos y servirla. No te preocupas de hacer la masa, pero sí de cocinarla y servirla.</p>
+                <p>En la nube, <strong>IaaS</strong> te da los bloques de construcción básicos: servidores virtuales, almacenamiento, redes. Tú instalas el sistema operativo, el software y gestionas tus aplicaciones. Es ideal para administradores de sistemas que quieren control. Ejemplos: <code>AWS EC2</code>, <code>Google Compute Engine</code>.</p>
+            </div>
+
+            <div class="explanation-box">
+                <h4>PaaS (Plataforma como Servicio): Pizza a domicilio</h4>
+                <p>Llamas a una pizzería y pides una pizza. Ellos la cocinan en su horno y te la entregan caliente en la puerta. Te han proporcionado la <strong>plataforma</strong> para disfrutar de la pizza. Tú solo pones la mesa, los platos y la bebida. No te preocupas ni de los ingredientes ni de cocinarla.</p>
+                <p>En la nube, <strong>PaaS</strong> te da un entorno listo para que desarrolles y ejecutes tus aplicaciones sin preocuparte por los servidores, el sistema operativo o el mantenimiento. Es ideal para desarrolladores de software. Ejemplos: <code>Heroku</code>, <code>Azure App Services</code>.</p>
+            </div>
+
+            <div class="explanation-box">
+                <h4>SaaS (Software como Servicio): Cenar en la pizzería</h4>
+                <p>Vas directamente al restaurante. Te sientas, pides la pizza y te la sirven en la mesa. No haces absolutamente nada más que disfrutar del servicio completo. El restaurante se encarga de todo, de principio a fin.</p>
+                <p>En la nube, <strong>SaaS</strong> son aplicaciones completas que usas directamente a través de internet. No gestionas nada, solo usas el software. Es el modelo que usamos todos los días. Ejemplos: <code>Gmail</code>, <code>Office 365</code>, <code>Netflix</code>.</p>
+            </div>
+
+            <h3>3. Cloud, Fog, Edge y Mist: La Analogía del Sistema Nervioso</h3>
+            <p>El problema principal que resuelven estas nuevas tendencias es la <strong>latencia</strong> (el tiempo de respuesta). Imagina un coche autónomo que detecta un obstáculo. No puede permitirse enviar la imagen a un servidor a 1000 km de distancia (la nube), esperar a que se procese y recibir la orden de "frenar". Necesita una respuesta instantánea.</p>
+
+            <div class="explanation-box">
+                <h4>Cloud Computing (El Cerebro)</h4>
+                <p>Es el centro de procesamiento principal. Muy potente, con una capacidad de almacenamiento y cálculo masiva. Es ideal para análisis complejos, Big Data y almacenar históricos. Sin embargo, está lejos de donde ocurren las cosas, por lo que tiene una <strong>latencia alta</strong> (la respuesta tarda en llegar).</p>
+            </div>
+
+            <div class="explanation-box">
+                <h4>Fog Computing (El Sistema Nervioso Local)</h4>
+                <p>Son nodos de procesamiento intermedios, más cercanos a los dispositivos que la nube. Imagina un servidor en una fábrica o en una antena de telecomunicaciones de un barrio. El "Fog" (niebla) está más cerca del "suelo" (dispositivos) que las "nubes". Filtra datos importantes y puede tomar decisiones locales rápidas, enviando solo los resúmenes a la nube. Tiene una <strong>latencia media</strong>.</p>
+            </div>
+
+            <div class="explanation-box">
+                <h4>Edge Computing (Los Reflejos)</h4>
+                <p>El procesamiento ocurre "en el borde" (edge) de la red, es decir, en el propio dispositivo o muy cerca de él (por ejemplo, en un router o gateway). Es como un acto reflejo de tu cuerpo: si tocas algo caliente, retiras la mano antes de que la señal llegue al cerebro. El coche autónomo que frena es el ejemplo perfecto. Ofrece una <strong>latencia mínima</strong>, casi instantánea, para decisiones críticas.</p>
+            </div>
+
+             <div class="explanation-box">
+                <h4>Mist Computing (Las Células)</h4>
+                <p>Es la forma más extrema de Edge. El procesamiento ocurre dentro de los propios sensores y microcontroladores. "Mist" (bruma) es aún más ligero y cercano que la niebla. Cada pequeño dispositivo tiene una inteligencia mínima para procesar sus propios datos. Es la máxima descentralización.</p>
+            </div>
+        </div>
+
+
+        <!-- CUESTIONARIO -->
         <h2>Cuestionario de Autoevaluación</h2>
         <form id="quizForm">
             <!-- PREGUNTAS UF3 -->
@@ -199,8 +273,6 @@
                 <label class="option"><input type="radio" name="q12" value="c"> c) La digital integra tecnologías en todos sus procesos, mientras que la tradicional opera de forma más manual o con sistemas aislados.</label>
                 <label class="option"><input type="radio" name="q12" value="d"> d) La tradicional solo vende productos físicos.</label>
             </div>
-
-            <!-- PREGUNTAS UF4 -->
             <div class="question"><p>13. ¿Qué es la computación en la nube (cloud computing)?</p>
                 <label class="option"><input type="radio" name="q13" value="a"> a) Un sistema para predecir el tiempo meteorológico.</label>
                 <label class="option"><input type="radio" name="q13" value="b"> b) Guardar archivos exclusivamente en un disco duro externo.</label>
@@ -225,23 +297,23 @@
                 <label class="option"><input type="radio" name="q16" value="c"> c) Una medida de seguridad fija que no se puede cambiar.</label>
                 <label class="option"><input type="radio" name="q16" value="d"> d) Que los costes son siempre fijos e inalterables.</label>
             </div>
-            <div class="question"><p>17. Gmail, Google Drive y Office 365 son ejemplos de qué modelo de servicio en la nube?</p>
+            <div class="question"><p>17. Si contratas un servicio para usar una aplicación completa como Gmail o Netflix, estás usando un modelo...</p>
                 <label class="option"><input type="radio" name="q17" value="a"> a) IaaS (Infraestructura como Servicio).</label>
                 <label class="option"><input type="radio" name="q17" value="b"> b) PaaS (Plataforma como Servicio).</label>
                 <label class="option"><input type="radio" name="q17" value="c"> c) SaaS (Software como Servicio).</label>
-                <label class="option"><input type="radio" name="q17" value="d"> d) CaaS (Contenedor como Servicio).</label>
+                <label class="option"><input type="radio" name="q17" value="d"> d) On-Premises.</label>
             </div>
-            <div class="question"><p>18. ¿Qué modelo de servicio en la nube ofrece acceso a servidores, redes y almacenamiento?</p>
+            <div class="question"><p>18. Un desarrollador que quiere crear una aplicación sin preocuparse por el sistema operativo o los servidores, debería elegir un modelo...</p>
                 <label class="option"><input type="radio" name="q18" value="a"> a) IaaS.</label>
                 <label class="option"><input type="radio" name="q18" value="b"> b) PaaS.</label>
                 <label class="option"><input type="radio" name="q18" value="c"> c) SaaS.</label>
-                <label class="option"><input type="radio" name="q18" value="d"> d) Todas las anteriores.</label>
+                <label class="option"><input type="radio" name="q18" value="d"> d) On-Premises.</label>
             </div>
-            <div class="question"><p>19. En el modelo PaaS, ¿de qué se encarga principalmente el usuario?</p>
-                <label class="option"><input type="radio" name="q19" value="a"> a) De gestionar los servidores físicos y la red.</label>
-                <label class="option"><input type="radio" name="q19" value="b"> b) De desarrollar y ejecutar sus propias aplicaciones.</label>
-                <label class="option"><input type="radio" name="q19" value="c"> c) De la seguridad del centro de datos.</label>
-                <label class="option"><input type="radio" name="q19" value="d"> d) De mantener el sistema operativo actualizado.</label>
+            <div class="question"><p>19. ¿En qué modelo de servicio el usuario tiene el MÁXIMO control sobre el sistema operativo y las aplicaciones?</p>
+                <label class="option"><input type="radio" name="q19" value="a"> a) SaaS.</label>
+                <label class="option"><input type="radio" name="q19" value="b"> b) PaaS.</label>
+                <label class="option"><input type="radio" name="q19" value="c"> c) IaaS.</label>
+                <label class="option"><input type="radio" name="q19" value="d"> d) En ninguno, el proveedor lo controla todo siempre.</label>
             </div>
             <div class="question"><p>20. ¿Qué son los "contenedores" en la nube, como Docker o Kubernetes?</p>
                 <label class="option"><input type="radio" name="q20" value="a"> a) Cajas físicas para transportar servidores.</label>
@@ -255,23 +327,23 @@
                 <label class="option"><input type="radio" name="q21" value="c"> c) Solo funcionan en un único sistema operativo.</label>
                 <label class="option"><input type="radio" name="q21" value="d"> d) Son muy costosos de implementar.</label>
             </div>
-            <div class="question"><p>22. ¿Qué tendencia busca realizar el procesamiento de datos cerca de la fuente donde se generan?</p>
+            <div class="question"><p>22. ¿Qué tendencia busca reducir la latencia procesando datos cerca de donde se generan?</p>
                 <label class="option"><input type="radio" name="q22" value="a"> a) Cloud Computing tradicional.</label>
                 <label class="option"><input type="radio" name="q22" value="b"> b) Mainframe Computing.</label>
                 <label class="option"><input type="radio" name="q22" value="c"> c) Edge Computing.</label>
                 <label class="option"><input type="radio" name="q22" value="d"> d) Local Computing.</label>
             </div>
-            <div class="question"><p>23. La principal ventaja de Fog y Edge Computing frente al Cloud es:</p>
-                <label class="option"><input type="radio" name="q23" value="a"> a) Mayor capacidad de almacenamiento centralizado.</label>
-                <label class="option"><input type="radio" name="q23" value="b"> b) Menor latencia y mayor velocidad de respuesta.</label>
-                <label class="option"><input type="radio" name="q23" value="c"> c) Costes más elevados.</label>
-                <label class="option"><input type="radio" name="q23" value="d"> d) Mayor dependencia de una conexión a Internet de alta velocidad.</label>
+            <div class="question"><p>23. En la analogía del sistema nervioso, ¿qué representaría el Edge Computing?</p>
+                <label class="option"><input type="radio" name="q23" value="a"> a) El cerebro (procesamiento central y complejo).</label>
+                <label class="option"><input type="radio" name="q23" value="b"> b) Los actos reflejos (respuesta instantánea y local).</label>
+                <label class="option"><input type="radio" name="q23" value="c"> c) La memoria a largo plazo.</label>
+                <label class="option"><input type="radio" name="q23" value="d"> d) El sistema circulatorio.</label>
             </div>
-             <div class="question"><p>24. Mist Computing realiza el procesamiento...</p>
-                <label class="option"><input type="radio" name="q24" value="a"> a) En el centro de datos principal (nube).</label>
-                <label class="option"><input type="radio" name="q24" value="b"> b) En nodos intermedios (niebla).</label>
-                <label class="option"><input type="radio" name="q24" value="c"> c) Dentro del propio dispositivo que genera los datos.</label>
-                <label class="option"><input type="radio" name="q24" value="d"> d) Solo en ordenadores de sobremesa.</label>
+             <div class="question"><p>24. ¿Qué arquitectura se sitúa en un punto intermedio entre el Cloud y el Edge?</p>
+                <label class="option"><input type="radio" name="q24" value="a"> a) Mist Computing.</label>
+                <label class="option"><input type="radio" name="q24" value="b"> b) Fog Computing.</label>
+                <label class="option"><input type="radio" name="q24" value="c"> c) Sun Computing.</label>
+                <label class="option"><input type="radio" name="q24" value="d"> d) Central Computing.</label>
             </div>
              <div class="question"><p>25. ¿Por qué la ciberseguridad es esencial en la nube?</p>
                 <label class="option"><input type="radio" name="q25" value="a"> a) Porque los datos no tienen ningún valor.</label>
@@ -295,8 +367,8 @@
                 q1: "b", q2: "c", q3: "b", q4: "d", q5: "b",
                 q6: "c", q7: "b", q8: "c", q9: "b", q10: "b",
                 q11: "b", q12: "c", q13: "c", q14: "c", q15: "b",
-                q16: "b", q17: "c", q18: "a", q19: "b", q20: "b",
-                q21: "b", q22: "c", q23: "b", q24: "c", q25: "b"
+                q16: "b", q17: "c", q18: "b", q19: "c", q20: "b",
+                q21: "b", q22: "c", q23: "b", q24: "b", q25: "b"
             };
             
             let score = 0;
