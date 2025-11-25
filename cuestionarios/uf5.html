@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>UF5 · Aplicación de las THD en la empresa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #050816;
+      --card: #0f172a;
+      --accent: #22c55e;
+      --accent-soft: rgba(34,197,94,0.12);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --radius: 18px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 1100px;
+      background: radial-gradient(900px 560px at 100% 120%, rgba(56,189,248,.15), transparent 66%),
+                  radial-gradient(900px 560px at -10% -20%, rgba(52,211,153,.15), transparent 66%),
+                  rgba(10,14,27,.9);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,.35);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(148,163,184,.3);
+      background: linear-gradient(90deg, rgba(15,23,42,.9), rgba(15,23,42,.4));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: conic-gradient(from 0deg, #22c55e, #22d3ee, #6366f1, #22c55e);
+      padding: 2px;
+    }
+
+    .logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #bbf7d0;
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .title-block p {
+      margin: 2px 0 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    main {
+      padding: 20px 24px 24px;
+    }
+
+    .intro {
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(15,23,42,.96);
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,.35);
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 35px rgba(15,23,42,.9);
+      border-color: rgba(94,234,212,.8);
+      background: radial-gradient(circle at top, rgba(45,212,191,.06), rgba(15,23,42,.98));
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: rgba(34,197,94,.12);
+      color: #bbf7d0;
+      font-size: 0.75rem;
+      margin-bottom: 6px;
+    }
+
+    .badge span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,.25);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    h3 {
+      margin: 8px 0 4px;
+      font-size: 0.9rem;
+    }
+
+    .card p,
+    .card li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .card p {
+      margin: 4px 0 8px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+    }
+
+    .card ul li + li {
+      margin-top: 2px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      min-width: 0;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      text-decoration: none;
+      border: 1px solid rgba(148,163,184,.6);
+      color: var(--text-main);
+      background: rgba(15,23,42,0.9);
+      cursor: pointer;
+      transition: background .18s ease, border-color .18s ease, transform .12s ease;
+    }
+
+    .btn.primary {
+      border-color: rgba(34,197,94,.9);
+      background: linear-gradient(90deg, #16a34a, #22c55e);
+      color: #052e16;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(248,250,252,.9);
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+    }
+
+    /* ===== QUIZ ===== */
+
+    .quiz-section {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(148,163,184,.4);
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .quiz-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .quiz-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .question-card {
+      background: rgba(15,23,42,.96);
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,.35);
+      padding: 10px 12px 12px;
+      font-size: 0.86rem;
+      transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .question-card:hover {
+      border-color: rgba(94,234,212,.7);
+      box-shadow: 0 12px 25px rgba(15,23,42,.8);
+      background: radial-gradient(circle at top, rgba(45,212,191,.04), rgba(15,23,42,.98));
+    }
+
+    .question-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.88rem;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 3px;
+    }
+
+    .options li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+
+    .options input[type="radio"] {
+      margin-top: 2px;
+      accent-color: #22c55e;
+    }
+
+    .feedback {
+      margin-top: 3px;
+      font-size: 0.8rem;
+      min-height: 16px;
+    }
+
+    .feedback.correct {
+      color: #4ade80;
+    }
+
+    .feedback.incorrect {
+      color: #f97373;
+    }
+
+    .quiz-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .score {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .score span {
+      color: #4ade80;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <div class="logo-inner">UF5</div>
+        </div>
+        <div class="title-block">
+          <h1>UF5 · Aplicación de las THD en la empresa</h1>
+          <p>Resumen y test interactivo · Digitalización · 2º DAW</p>
+        </div>
+      </div>
+
+      <div class="actions" style="max-width: 220px;">
+        <a href="index.html" class="btn">Volver al índice</a>
+      </div>
+    </header>
+
+    <main>
+      <p class="intro">
+        En esta página tienes un <strong>resumen muy al grano</strong> de la UF5 y un
+        <strong>test autocorregible de 25 preguntas</strong> para practicar el examen.
+        Primero repasa las tarjetas y después intenta hacer el test sin mirar.
+      </p>
+
+      <!-- ===== RESUMEN EN TARJETAS ===== -->
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>1 · Empresa digital</div>
+            <h2>¿Cuándo es digital una empresa?</h2>
+            <p>Una empresa es digital cuando utiliza tecnologías digitales en <strong>todas sus áreas</strong>
+              (producción, gestión, finanzas, RRHH, marketing, atención al cliente…) para
+              mejorar <strong>eficiencia</strong> y <strong>competitividad</strong>. La digitalización es un proceso
+              <strong>gradual</strong>, no un cambio de golpe.</p>
+
+            <h3>Aplicaciones típicas de las THD:</h3>
+            <ul>
+              <li><strong>Ofimática</strong>: procesadores de texto, hojas de cálculo, presentaciones.</li>
+              <li><strong>Cliente</strong>: CRM, comercio electrónico, chatbots, redes sociales.</li>
+              <li><strong>Trabajo colaborativo</strong>: Google Workspace, Microsoft 365, Zoom, Meet.</li>
+              <li><strong>Gestión empresarial</strong>: ERP, big data, business intelligence.</li>
+              <li><strong>Producción / Industria 4.0</strong>: robots, cobots, IA, drones.</li>
+              <li><strong>Seguridad</strong>: firewalls, antivirus, gestión de identidades.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>2 · Desarrollo de productos</div>
+            <h2>THD en el desarrollo de productos</h2>
+            <p>Las THD permiten <strong>innovar</strong>, reducir costes y crear productos más
+              rápidos y personalizados.</p>
+
+            <h3>Beneficios principales:</h3>
+            <ul>
+              <li>Optimización del diseño, fabricación y distribución.</li>
+              <li>Reducción de costes y tiempo de salida al mercado.</li>
+              <li>Productos <strong>nuevos y personalizados</strong>.</li>
+              <li>Mejor experiencia de cliente y reputación.</li>
+              <li>Mayor control de recursos y cadena de suministro.</li>
+              <li>Enfoque en <strong>sostenibilidad y ecosostenibilidad</strong>.</li>
+            </ul>
+
+            <h3>Tecnologías clave:</h3>
+            <ul>
+              <li>Big Data, Cloud Computing.</li>
+              <li>IoT, IoP, 5G.</li>
+              <li>Realidad virtual (VR) y aumentada (AR).</li>
+              <li>Impresión 3D, Blockchain.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>3 · Casos prácticos</div>
+            <h2>Ejemplos de uso de THD</h2>
+
+            <h3>Walmart (supermercado):</h3>
+            <ul>
+              <li>Big Data para gestionar inventario y prever la demanda.</li>
+              <li>Ofertas y promociones personalizadas según hábitos de compra.</li>
+              <li>Optimización de transporte y logística.</li>
+              <li>Detección de pérdidas y fraudes (robos, devoluciones raras, etc.).</li>
+            </ul>
+
+            <h3>Henn-na Hotel (Japón):</h3>
+            <ul>
+              <li>Robots para recepción y check-in.</li>
+              <li>Entrega de toallas, amenities y equipaje.</li>
+              <li>Limpieza de zonas comunes.</li>
+              <li>Asistencia, orientación y entretenimiento a los huéspedes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>4 · Riesgos y vulnerabilidades</div>
+            <h2>Riesgos de las THD · IoP</h2>
+
+            <h3>Internet de los Pagos (IoP):</h3>
+            <p>Dispositivos que <strong>pagan solos</strong> sin intervención humana
+              (fotocopiadora que compra tóner, nevera que hace la compra, telepeaje Via-T…).</p>
+            <p>Problema principal: <strong>gran vulnerabilidad</strong> y riesgo de uso fraudulento.</p>
+
+            <h3>Vulnerabilidades típicas:</h3>
+            <ul>
+              <li><strong>Malware y virus</strong>: software malicioso.</li>
+              <li><strong>Phishing</strong>: engaños para robar datos.</li>
+              <li><strong>Ataques DoS</strong>: saturar un servidor hasta que no responda.</li>
+              <li><strong>Contraseñas débiles</strong> / mala autenticación.</li>
+              <li><strong>Violación de datos</strong>: acceso a información sensible.</li>
+              <li><strong>Monitorización no autorizada</strong> sin consentimiento.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>5 · Hacker vs ciberdelincuente</div>
+            <h2>Personas que atacan o protegen sistemas</h2>
+
+            <h3>Hacker:</h3>
+            <ul>
+              <li>Experto en informática.</li>
+              <li>Busca fallos de seguridad para <strong>avisar y mejorar</strong> sistemas.</li>
+              <li>No tiene por qué ser delincuente.</li>
+            </ul>
+
+            <h3>Ciberdelincuente:</h3>
+            <ul>
+              <li>Usa sus conocimientos para <strong>cometer delitos</strong>.</li>
+              <li>Busca robar, extorsionar o vender datos.</li>
+              <li>Utiliza malware, phishing, troyanos, etc.</li>
+            </ul>
+
+            <h3>Ciberdelincuencia y dark web:</h3>
+            <ul>
+              <li>Ciberdelincuencia = delitos con tecnologías digitales.</li>
+              <li>La <strong>dark web</strong> es la parte oculta de Internet donde se venden datos robados,
+                  cuentas, documentos, etc.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>6 · CISO y protección</div>
+            <h2>Cómo se protegen las empresas</h2>
+
+            <p>Las empresas deben informar de ciberataques y pueden tener que
+              <strong>indemnizar</strong> si no protegieron bien los datos.</p>
+
+            <h3>Rol del CISO (Chief Information Security Officer):</h3>
+            <ul>
+              <li>Garantizar la <strong>privacidad</strong> de los datos.</li>
+              <li>Prevenir, detectar y analizar vulnerabilidades.</li>
+              <li>Responder rápido a incidentes de ciberseguridad.</li>
+              <li>Definir y aplicar políticas de seguridad.</li>
+              <li>Alinear la seguridad con los objetivos de la empresa.</li>
+              <li>Realizar <strong>investigación forense digital</strong> cuando sea necesario.</li>
+              <li>Formar y concienciar a toda la organización.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>7 · Datos y privacidad</div>
+            <h2>“Si no pagas, eres el producto”</h2>
+
+            <p>Muchos servicios “gratis” (redes sociales, correo, apps…) ganan dinero
+              con tus <strong>datos personales</strong> y con publicidad personalizada.</p>
+
+            <h3>Valor de los datos:</h3>
+            <ul>
+              <li>Datos básicos (DNI, email, redes…) → entre 1 y 10 €.</li>
+              <li>Perfil completo con datos financieros → hasta ~870 €.</li>
+              <li>En la dark web pueden vender tu identidad por unos ~1000 €.</li>
+            </ul>
+
+            <h3>Robo de datos:</h3>
+            <ul>
+              <li>No existe la seguridad absoluta.</li>
+              <li>La mayoría de ciberdelitos son <strong>fraudes informáticos</strong>.</li>
+              <li>El término <strong>hacker</strong> hoy se usa de forma más neutra
+                  (no siempre es criminal).</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="card">
+          <div>
+            <div class="badge"><span></span>8 · Ciberseguridad práctica</div>
+            <h2>Ciberseguridad: objetivo y consejos</h2>
+
+            <p>La ciberseguridad busca proteger sistemas y datos frente a amenazas,
+              garantizando la <strong>confidencialidad</strong> y la <strong>integridad</strong> de la información.</p>
+
+            <h3>10 consejos clave en la empresa:</h3>
+            <ul>
+              <li>Apuesta por la información y la formación.</li>
+              <li>Usa redes wifi fiables.</li>
+              <li>Cuidado con enlaces sospechosos.</li>
+              <li>No piratees el software.</li>
+              <li>Instala un antivirus.</li>
+              <li>Mantén sistemas y apps actualizados.</li>
+              <li>Cifra la información sensible.</li>
+              <li>Haz copias de seguridad.</li>
+              <li>Usa contraseñas seguras.</li>
+              <li>Aplica el sentido común siempre.</li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <a href="index.html" class="btn">Volver al índice</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== TEST INTERACTIVO ===== -->
+      <section class="quiz-section">
+        <div class="quiz-header">
+          <div>
+            <div class="quiz-title">Test interactivo UF5 · 25 preguntas</div>
+            <div class="quiz-subtitle">Responde y pulsa en <strong>Corregir test</strong> para ver tu nota y qué has fallado.</div>
+          </div>
+        </div>
+
+        <form id="quiz-form">
+          <div class="question-grid">
+            <!-- P1 -->
+            <div class="question-card" id="card-q1">
+              <div class="question-title">1. ¿Qué implica el uso de las THD en las empresas?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q1" value="a" id="q1a" />
+                  <label for="q1a">Abordar las tareas de manera convencional sin cambios significativos.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q1" value="b" id="q1b" />
+                  <label for="q1b">Desafiar paradigmas mentales arraigados y reinventar la forma habitual de realizar el trabajo.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q1" value="c" id="q1c" />
+                  <label for="q1c">Adoptar tecnologías solo en áreas específicas como recursos humanos y producción.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q1" value="d" id="q1d" />
+                  <label for="q1d">Mantener los paradigmas mentales y las formas tradicionales de realizar el trabajo.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q1"></div>
+            </div>
+
+            <!-- P2 -->
+            <div class="question-card" id="card-q2">
+              <div class="question-title">2. No es una herramienta de seguridad informática:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q2" value="a" id="q2a" />
+                  <label for="q2a">Sistemas de gestión de identidades.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q2" value="b" id="q2b" />
+                  <label for="q2b">CRM.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q2" value="c" id="q2c" />
+                  <label for="q2c">Antivirus.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q2" value="d" id="q2d" />
+                  <label for="q2d">Firewall.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q2"></div>
+            </div>
+
+            <!-- P3 -->
+            <div class="question-card" id="card-q3">
+              <div class="question-title">3. ¿Cuál de las siguientes opciones describe un tipo de ataque donde se envían muchas solicitudes a un servidor para sobrecargarlo y dejarlo fuera de servicio?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q3" value="a" id="q3a" />
+                  <label for="q3a">Monitoreo no autorizado.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q3" value="b" id="q3b" />
+                  <label for="q3b">Ataques de denegación de servicios (DDoS).</label>
+                </li>
+                <li>
+                  <input type="radio" name="q3" value="c" id="q3c" />
+                  <label for="q3c">Phishing.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q3" value="d" id="q3d" />
+                  <label for="q3d">Malware y virus.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q3"></div>
+            </div>
+
+            <!-- P4 -->
+            <div class="question-card" id="card-q4">
+              <div class="question-title">4. ¿Cómo afecta la ciberdelincuencia a las empresas?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q4" value="a" id="q4a" />
+                  <label for="q4a">Solo se roban datos a grandes empresas.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q4" value="b" id="q4b" />
+                  <label for="q4b">Únicamente puede provocar fraude financiero.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q4" value="c" id="q4c" />
+                  <label for="q4c">Únicamente afecta a particulares, no a empresas.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q4" value="d" id="q4d" />
+                  <label for="q4d">Puede afectar a través del fraude financiero, ciberespionaje, entre otros.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q4"></div>
+            </div>
+
+            <!-- P5 -->
+            <div class="question-card" id="card-q5">
+              <div class="question-title">5. ¿Cuál de las siguientes vulnerabilidades se refiere a la recopilación de datos sin el consentimiento del usuario?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q5" value="a" id="q5a" />
+                  <label for="q5a">Monitoreo no autorizado.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q5" value="b" id="q5b" />
+                  <label for="q5b">Fallos en la autenticación y contraseñas débiles.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q5" value="c" id="q5c" />
+                  <label for="q5c">Phishing.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q5" value="d" id="q5d" />
+                  <label for="q5d">Violaciones de datos.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q5"></div>
+            </div>
+
+            <!-- P6 -->
+            <div class="question-card" id="card-q6">
+              <div class="question-title">6. En relación con los hackers y ciberdelincuentes:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q6" value="a" id="q6a" />
+                  <label for="q6a">Los ciberdelincuentes tienen mayores habilidades técnicas.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q6" value="b" id="q6b" />
+                  <label for="q6b">Un hacker es siempre un ciberdelincuente.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q6" value="c" id="q6c" />
+                  <label for="q6c">Un hacker investiga un sistema, mientras que un ciberdelincuente comete delitos.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q6" value="d" id="q6d" />
+                  <label for="q6d">Son lo mismo.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q6"></div>
+            </div>
+
+            <!-- P7 -->
+            <div class="question-card" id="card-q7">
+              <div class="question-title">7. ¿En qué partes del proceso productivo intervienen las THD?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q7" value="a" id="q7a" />
+                  <label for="q7a">Únicamente en el análisis del cliente.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q7" value="b" id="q7b" />
+                  <label for="q7b">En cualquier parte en el que tenga cabida.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q7" value="c" id="q7c" />
+                  <label for="q7c">En el desarrollo de plataformas digitales.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q7" value="d" id="q7d" />
+                  <label for="q7d">En la producción.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q7"></div>
+            </div>
+
+            <!-- P8 -->
+            <div class="question-card" id="card-q8">
+              <div class="question-title">8. ¿Cuál de las siguientes opciones corresponde a herramientas informáticas para la planificación y el seguimiento de proyectos compartidos, así como tecnologías que posibilitan el trabajo en remoto?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q8" value="a" id="q8a" />
+                  <label for="q8a">Big data y business intelligence.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q8" value="b" id="q8b" />
+                  <label for="q8b">Google Workspace y Zoom.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q8" value="c" id="q8c" />
+                  <label for="q8c">Firewalls y antivirus.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q8" value="d" id="q8d" />
+                  <label for="q8d">Brazos robóticos y drones.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q8"></div>
+            </div>
+
+            <!-- P9 -->
+            <div class="question-card" id="card-q9">
+              <div class="question-title">9. El principal objetivo del phishing es:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q9" value="a" id="q9a" />
+                  <label for="q9a">Crear redes sociales seguras.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q9" value="b" id="q9b" />
+                  <label for="q9b">Ofrecer publicidad personalizada.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q9" value="c" id="q9c" />
+                  <label for="q9c">Suplantar la identidad.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q9" value="d" id="q9d" />
+                  <label for="q9d">Proteger la privacidad en línea.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q9"></div>
+            </div>
+
+            <!-- P10 -->
+            <div class="question-card" id="card-q10">
+              <div class="question-title">10. Se considera que una empresa es digital cuando:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q10" value="a" id="q10a" />
+                  <label for="q10a">Emplea tecnologías digitales en aspectos clave de su operación.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q10" value="b" id="q10b" />
+                  <label for="q10b">Tiene una página web.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q10" value="c" id="q10c" />
+                  <label for="q10c">Vende productos en línea.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q10" value="d" id="q10d" />
+                  <label for="q10d">Tiene perfiles en redes sociales.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q10"></div>
+            </div>
+
+            <!-- P11 -->
+            <div class="question-card" id="card-q11">
+              <div class="question-title">11. La dark web es:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q11" value="a" id="q11a" />
+                  <label for="q11a">Un directorio de empresas locales.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q11" value="b" id="q11b" />
+                  <label for="q11b">Una parte de Internet oculta a los motores de búsqueda.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q11" value="c" id="q11c" />
+                  <label for="q11c">Un mercado legal online.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q11" value="d" id="q11d" />
+                  <label for="q11d">Un navegador web.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q11"></div>
+            </div>
+
+            <!-- P12 -->
+            <div class="question-card" id="card-q12">
+              <div class="question-title">12. Un CISO es:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q12" value="a" id="q12a" />
+                  <label for="q12a">Un perfil profesional que se dedica al desarrollo de nuevos productos con soporte tecnológico.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q12" value="b" id="q12b" />
+                  <label for="q12b">Una persona con grandes habilidades en el manejo de computadoras que investiga un sistema informático para avisar de fallos y desarrollar técnicas de mejora.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q12" value="c" id="q12c" />
+                  <label for="q12c">Una persona que utiliza sus habilidades informáticas para cometer delitos, accediendo a información confidencial de empresas o personas.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q12" value="d" id="q12d" />
+                  <label for="q12d">Un perfil profesional dedicado a velar por la seguridad y proteger a las empresas de ciberataques y otros incidentes de seguridad.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q12"></div>
+            </div>
+
+            <!-- P13 -->
+            <div class="question-card" id="card-q13">
+              <div class="question-title">13. ¿Qué amenazas aborda la ciberseguridad?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q13" value="a" id="q13a" />
+                  <label for="q13a">Publicidad personalizada.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q13" value="b" id="q13b" />
+                  <label for="q13b">Amenazas políticas.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q13" value="c" id="q13c" />
+                  <label for="q13c">Virus y malware.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q13" value="d" id="q13d" />
+                  <label for="q13d">Amenazas climáticas.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q13"></div>
+            </div>
+
+            <!-- P14 -->
+            <div class="question-card" id="card-q14">
+              <div class="question-title">14. Una de las consecuencias de implementar tecnologías avanzadas de manera coordinada es:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q14" value="a" id="q14a" />
+                  <label for="q14a">Aumento de los costes de producción.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q14" value="b" id="q14b" />
+                  <label for="q14b">Optimización del resultado empresarial.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q14" value="c" id="q14c" />
+                  <label for="q14c">Reducción de la eficiencia empresarial.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q14" value="d" id="q14d" />
+                  <label for="q14d">Desarrollo de productos estándar.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q14"></div>
+            </div>
+
+            <!-- P15 -->
+            <div class="question-card" id="card-q15">
+              <div class="question-title">15. El principal obstáculo para la implementación del Internet de los Pagos (IoP) es:</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q15" value="a" id="q15a" />
+                  <label for="q15a">Apenas tiene ventajas.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q15" value="b" id="q15b" />
+                  <label for="q15b">La gran complejidad técnica que tiene su aplicación.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q15" value="c" id="q15c" />
+                  <label for="q15c">Produce rechazo a la mayor parte de los consumidores.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q15" value="d" id="q15d" />
+                  <label for="q15d">Su vulnerabilidad y necesidad de medidas de seguridad.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q15"></div>
+            </div>
+
+            <!-- P16 -->
+            <div class="question-card" id="card-q16">
+              <div class="question-title">16. ¿Cuál es uno de los beneficios principales del uso de big data en empresas como Walmart?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q16" value="a" id="q16a" />
+                  <label for="q16a">Aumentar el número de empleados.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q16" value="b" id="q16b" />
+                  <label for="q16b">Analizar datos para predecir la demanda y optimizar inventarios.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q16" value="c" id="q16c" />
+                  <label for="q16c">Eliminar la necesidad de logística.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q16" value="d" id="q16d" />
+                  <label for="q16d">Evitar la creación de promociones personalizadas.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q16"></div>
+            </div>
+
+            <!-- P17 -->
+            <div class="question-card" id="card-q17">
+              <div class="question-title">17. ¿Cuál de las siguientes tecnologías pertenece claramente a la Industria 4.0?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q17" value="a" id="q17a" />
+                  <label for="q17a">Impresoras matriciales.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q17" value="b" id="q17b" />
+                  <label for="q17b">Robots colaborativos (cobots).</label>
+                </li>
+                <li>
+                  <input type="radio" name="q17" value="c" id="q17c" />
+                  <label for="q17c">Fax digital.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q17" value="d" id="q17d" />
+                  <label for="q17d">Lenguajes de programación básicos.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q17"></div>
+            </div>
+
+            <!-- P18 -->
+            <div class="question-card" id="card-q18">
+              <div class="question-title">18. ¿Qué función NO realiza un CISO?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q18" value="a" id="q18a" />
+                  <label for="q18a">Garantizar la privacidad de los datos de la empresa.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q18" value="b" id="q18b" />
+                  <label for="q18b">Realizar investigaciones forenses digitales.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q18" value="c" id="q18c" />
+                  <label for="q18c">Suplantar identidades para comprobar vulnerabilidades reales.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q18" value="d" id="q18d" />
+                  <label for="q18d">Definir políticas de seguridad.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q18"></div>
+            </div>
+
+            <!-- P19 -->
+            <div class="question-card" id="card-q19">
+              <div class="question-title">19. ¿Qué suponen las herramientas de ofimática dentro de una empresa digitalizada?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q19" value="a" id="q19a" />
+                  <label for="q19a">La eliminación del trabajo colaborativo.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q19" value="b" id="q19b" />
+                  <label for="q19b">La base para crear, almacenar y editar información.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q19" value="c" id="q19c" />
+                  <label for="q19c">La principal fuente de vulnerabilidades.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q19" value="d" id="q19d" />
+                  <label for="q19d">Tecnología exclusiva para departamentos de marketing.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q19"></div>
+            </div>
+
+            <!-- P20 -->
+            <div class="question-card" id="card-q20">
+              <div class="question-title">20. ¿Qué indica la frase “si no eres el cliente, eres el producto”?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q20" value="a" id="q20a" />
+                  <label for="q20a">Que los productos digitales son de baja calidad.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q20" value="b" id="q20b" />
+                  <label for="q20b">Que los servicios gratuitos obtienen beneficios vendiendo datos del usuario.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q20" value="c" id="q20c" />
+                  <label for="q20c">Que toda la tecnología es de pago.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q20" value="d" id="q20d" />
+                  <label for="q20d">Que los usuarios controlan cómo se venden sus datos.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q20"></div>
+            </div>
+
+            <!-- P21 -->
+            <div class="question-card" id="card-q21">
+              <div class="question-title">21. ¿Qué elemento forma parte de la respuesta recomendada ante un incidente de ciberseguridad?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q21" value="a" id="q21a" />
+                  <label for="q21a">Mantener el equipo conectado para analizarlo en directo.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q21" value="b" id="q21b" />
+                  <label for="q21b">Cambiar las contraseñas después de limpiar el sistema.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q21" value="c" id="q21c" />
+                  <label for="q21c">Ignorar el incidente si parece poco grave.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q21" value="d" id="q21d" />
+                  <label for="q21d">Desinstalar el antivirus.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q21"></div>
+            </div>
+
+            <!-- P22 -->
+            <div class="question-card" id="card-q22">
+              <div class="question-title">22. ¿Qué riesgo concreto busca evitar el cifrado de la información?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q22" value="a" id="q22a" />
+                  <label for="q22a">El acceso no autorizado a datos sensibles.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q22" value="b" id="q22b" />
+                  <label for="q22b">La lentitud del equipo.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q22" value="c" id="q22c" />
+                  <label for="q22c">El aumento de costes energéticos.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q22" value="d" id="q22d" />
+                  <label for="q22d">El phishing.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q22"></div>
+            </div>
+
+            <!-- P23 -->
+            <div class="question-card" id="card-q23">
+              <div class="question-title">23. ¿Por qué se considera que la seguridad absoluta no existe?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q23" value="a" id="q23a" />
+                  <label for="q23a">Porque todas las empresas son pequeñas y no pueden protegerse.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q23" value="b" id="q23b" />
+                  <label for="q23b">Porque siempre habrá personas investigando vulnerabilidades en los sistemas.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q23" value="c" id="q23c" />
+                  <label for="q23c">Porque los antivirus no funcionan nunca.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q23" value="d" id="q23d" />
+                  <label for="q23d">Porque la tecnología no puede mejorar más.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q23"></div>
+            </div>
+
+            <!-- P24 -->
+            <div class="question-card" id="card-q24">
+              <div class="question-title">24. ¿Qué ventaja ofrece la impresión 3D en el desarrollo de productos según el temario?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q24" value="a" id="q24a" />
+                  <label for="q24a">Incrementa los residuos de producción.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q24" value="b" id="q24b" />
+                  <label for="q24b">Reduce la personalización del producto.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q24" value="c" id="q24c" />
+                  <label for="q24c">Permite prototipos rápidos y baratos.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q24" value="d" id="q24d" />
+                  <label for="q24d">Evita el uso de software de modelado.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q24"></div>
+            </div>
+
+            <!-- P25 -->
+            <div class="question-card" id="card-q25">
+              <div class="question-title">25. ¿Cuál es un ejemplo claro de monitoreo no autorizado?</div>
+              <ul class="options">
+                <li>
+                  <input type="radio" name="q25" value="a" id="q25a" />
+                  <label for="q25a">Un usuario que acepta voluntariamente los permisos de una app.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q25" value="b" id="q25b" />
+                  <label for="q25b">Una empresa que recopila datos sin informar al usuario.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q25" value="c" id="q25c" />
+                  <label for="q25c">Un antivirus que analiza el sistema.</label>
+                </li>
+                <li>
+                  <input type="radio" name="q25" value="d" id="q25d" />
+                  <label for="q25d">Un empleado revisando su propio correo corporativo.</label>
+                </li>
+              </ul>
+              <div class="feedback" id="feedback-q25"></div>
+            </div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn primary" id="submit-quiz">Corregir test</button>
+            <button type="reset" class="btn" id="reset-quiz">Reiniciar</button>
+          </div>
+          <div class="score" id="score"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const correctAnswers = {
+      q1: 'b',
+      q2: 'b',
+      q3: 'b',
+      q4: 'd',
+      q5: 'a',
+      q6: 'c',
+      q7: 'b',
+      q8: 'b',
+      q9: 'c',
+      q10: 'a',
+      q11: 'b',
+      q12: 'd',
+      q13: 'c',
+      q14: 'b',
+      q15: 'd',
+      q16: 'b',
+      q17: 'b',
+      q18: 'c',
+      q19: 'b',
+      q20: 'b',
+      q21: 'b',
+      q22: 'a',
+      q23: 'b',
+      q24: 'c',
+      q25: 'b'
+    };
+
+    const submitBtn = document.getElementById('submit-quiz');
+    const resetBtn = document.getElementById('reset-quiz');
+    const scoreEl = document.getElementById('score');
+
+    submitBtn.addEventListener('click', () => {
+      let score = 0;
+      const total = Object.keys(correctAnswers).length;
+
+      Object.entries(correctAnswers).forEach(([q, correct]) => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        const feedback = document.getElementById(`feedback-${q}`);
+        const card = document.getElementById(`card-${q}`);
+
+        // limpiar estilos previos
+        feedback.textContent = '';
+        feedback.classList.remove('correct', 'incorrect');
+        card.style.borderColor = 'rgba(148,163,184,.35)';
+
+        if (!selected) {
+          feedback.textContent = '⚠️ Pregunta sin responder.';
+          feedback.classList.add('incorrect');
+          card.style.borderColor = '#f97373';
+          return;
+        }
+
+        if (selected.value === correct) {
+          score++;
+          feedback.textContent = '✅ Correcta';
+          feedback.classList.add('correct');
+          card.style.borderColor = '#4ade80';
+        } else {
+          feedback.textContent = `❌ Incorrecta (correcta: ${correct.toUpperCase()})`;
+          feedback.classList.add('incorrect');
+          card.style.borderColor = '#f97373';
+        }
+      });
+
+      scoreEl.innerHTML = `Has acertado <span>${score}</span> de ${total} preguntas.`;
+    });
+
+    resetBtn.addEventListener('click', () => {
+      // limpiar feedback y estilo
+      Object.keys(correctAnswers).forEach((q) => {
+        const feedback = document.getElementById(`feedback-${q}`);
+        const card = document.getElementById(`card-${q}`);
+        if (feedback) {
+          feedback.textContent = '';
+          feedback.classList.remove('correct', 'incorrect');
+        }
+        if (card) {
+          card.style.borderColor = 'rgba(148,163,184,.35)';
+        }
+      });
+      scoreEl.textContent = '';
+    });
+  </script>
+</body>
+</html>
